@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ScheduleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         view.backgroundColor = .systemBackground
+        navigationItem.title = "Schedule"
     }
 }
 
