@@ -18,17 +18,20 @@ class MainTabBarController: UITabBarController {
         let scheduleVC = makeNavigationController(
             viewController: ScheduleViewController(),
             itemName: "Schedule",
-            itemImage: "calendar"
+            itemImage: "calendar",
+            selectedItemImage: "calendar"
         )
         let tasksVC = makeNavigationController(
             viewController: TasksViewController(),
             itemName: "Tasks",
-            itemImage: "doc.text.fill"
+            itemImage: "doc.text",
+            selectedItemImage: "doc.text.fill"
         )
         let contactsVC = makeNavigationController(
             viewController: ContactsViewController(),
             itemName: "Contacts",
-            itemImage: "person.3.fill"
+            itemImage: "person.3",
+            selectedItemImage: "person.3.fill"
         )
         
         viewControllers = [scheduleVC, tasksVC, contactsVC]
@@ -37,12 +40,13 @@ class MainTabBarController: UITabBarController {
     func makeNavigationController(
         viewController: UIViewController,
         itemName: String,
-        itemImage: String
+        itemImage: String,
+        selectedItemImage: String
     ) -> UINavigationController {
         let item = UITabBarItem(
             title: itemName,
             image: UIImage(systemName: itemImage),
-            tag: 0
+            selectedImage: UIImage(systemName: selectedItemImage)
         )
         let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem = item
