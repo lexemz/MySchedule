@@ -21,6 +21,7 @@
 		789A91CE280F3080006F6B61 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A91CD280F3080006F6B61 /* ContactsViewController.swift */; };
 		78C8C07A2812ABDB00A090E0 /* Extension + UIStackVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C0792812ABDB00A090E0 /* Extension + UIStackVIew.swift */; };
 		78C8C07C2812B14B00A090E0 /* Extension + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C07B2812B14B00A090E0 /* Extension + UILabel.swift */; };
+		78C8C07F2812E83200A090E0 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */; };
 		78E7EE6F281200FF00DC108F /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */; };
 		78E7EE772812095D00DC108F /* Extension + FSCalendar .swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7EE762812095D00DC108F /* Extension + FSCalendar .swift */; };
 		AFC61CFE9F0A581190E4F1A9 /* Pods_MySchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73179EEDD92A301B46BECE83 /* Pods_MySchedule.framework */; };
@@ -66,6 +67,7 @@
 		789A91CD280F3080006F6B61 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		78C8C0792812ABDB00A090E0 /* Extension + UIStackVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIStackVIew.swift"; sourceTree = "<group>"; };
 		78C8C07B2812B14B00A090E0 /* Extension + UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UILabel.swift"; sourceTree = "<group>"; };
+		78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 		78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		78E7EE722812025E00DC108F /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E7EE762812095D00DC108F /* Extension + FSCalendar .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + FSCalendar .swift"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */,
+				78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				78C8C07A2812ABDB00A090E0 /* Extension + UIStackVIew.swift in Sources */,
 				789A9198280F2DA4006F6B61 /* SceneDelegate.swift in Sources */,
 				789A91CE280F3080006F6B61 /* ContactsViewController.swift in Sources */,
+				78C8C07F2812E83200A090E0 /* TasksTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
