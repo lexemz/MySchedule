@@ -7,9 +7,12 @@
 
 import UIKit
 
-class ScheduleTableViewCell: UITableViewCell {
+final class ScheduleTableViewCell: UITableViewCell {
+    // MARK: - Public Properties
     
     static let id = "scheduleCell"
+    
+    // MARK: - UI Elements
     
     private lazy var lessonName = UILabel(
         initialText: "LESSON NAME",
@@ -76,13 +79,11 @@ class ScheduleTableViewCell: UITableViewCell {
         distribution: .fillEqually
     )
     
+    // MARK: - Cell LifeCycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        addSubview(cellIcon)
-        addSubview(topStackView)
-        addSubview(lessonTime)
-        addSubview(bottomStackView)
+        selectionStyle = .none
     }
     
     @available(*, unavailable)
@@ -91,12 +92,21 @@ class ScheduleTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
         setupConstaints()
-        selectionStyle = .none
     }
     
+    // MARK: - Public Methods
+    
+    func chahgeIconColor(_ color: UIColor) {
+        cellIcon.tintColor = color
+    }
+}
+
+// MARK: - Setup Constaints
+
+extension ScheduleTableViewCell {
     private func setupConstaints() {
+        addSubview(cellIcon)
         NSLayoutConstraint.activate([
             cellIcon.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             cellIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
@@ -104,6 +114,7 @@ class ScheduleTableViewCell: UITableViewCell {
             cellIcon.widthAnchor.constraint(equalToConstant: 25)
         ])
         
+        addSubview(topStackView)
         NSLayoutConstraint.activate([
             topStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             topStackView.leadingAnchor.constraint(equalTo: cellIcon.trailingAnchor, constant: 5),
@@ -111,20 +122,18 @@ class ScheduleTableViewCell: UITableViewCell {
             topStackView.heightAnchor.constraint(equalToConstant: 25)
         ])
         
+        addSubview(lessonTime)
         NSLayoutConstraint.activate([
             lessonTime.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             lessonTime.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             lessonTime.widthAnchor.constraint(equalToConstant: 100)
         ])
         
+        addSubview(bottomStackView)
         NSLayoutConstraint.activate([
             bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             bottomStackView.leadingAnchor.constraint(equalTo: lessonTime.trailingAnchor, constant: 10),
             bottomStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
-    }
-    
-    func chahgeIconColor(_ color: UIColor) {
-        cellIcon.tintColor = color
     }
 }

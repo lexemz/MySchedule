@@ -8,8 +8,13 @@
 import FSCalendar
 import UIKit
 
-class ScheduleViewController: UIViewController {
+final class ScheduleViewController: UIViewController {
+    // MARK: - Constraints
+
     private var calendarHeightConstraint: NSLayoutConstraint!
+    
+    // MARK: - UI Elements
+
     private lazy var calendar: FSCalendar = {
         let calendar = FSCalendar()
         calendar.scope = .week
@@ -34,10 +39,14 @@ class ScheduleViewController: UIViewController {
         return tableview
     }()
     
+    // MARK: - View LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureScreen()
     }
+    
+    // MARK: - Private Methods
     
     private func configureScreen() {
         view.backgroundColor = .systemBackground
@@ -63,7 +72,7 @@ class ScheduleViewController: UIViewController {
         swipeAction()
     }
     
-    @objc func expandCalendarButtonPressed() {
+    @objc private func expandCalendarButtonPressed() {
         if calendar.scope == .week {
             calendar.setScope(.month, animated: true)
             expandCalendarButton.setTitle("Collapse Calendar", for: .normal)
@@ -73,7 +82,8 @@ class ScheduleViewController: UIViewController {
         }
     }
     
-    // MARK: - SwipeGestureRecognizer
+    // MARK: SwipeGestureRecognizer
+
     private func swipeAction() {
         let swipeUp = UISwipeGestureRecognizer(
             target: self,
@@ -90,10 +100,10 @@ class ScheduleViewController: UIViewController {
         calendar.addGestureRecognizer(swipeDown)
     }
     
-    @objc func handleSwipe(gesture: UISwipeGestureRecognizer) {
+    @objc private func handleSwipe(gesture: UISwipeGestureRecognizer) {
         switch gesture.direction {
-        case.up where calendar.scope == .month: expandCalendarButtonPressed()
-        case.down where calendar.scope == .week: expandCalendarButtonPressed()
+        case .up where calendar.scope == .month: expandCalendarButtonPressed()
+        case .down where calendar.scope == .week: expandCalendarButtonPressed()
         default: break
         }
     }
@@ -131,7 +141,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         heightForRowAt indexPath: IndexPath
     ) -> CGFloat {
-        80
+        75
     }
 }
 
@@ -162,7 +172,6 @@ extension ScheduleViewController {
     func setConstaints() {
         let safeArea = view.safeAreaLayoutGuide
         
-
         calendarHeightConstraint = NSLayoutConstraint(
             item: calendar,
             attribute: .height,
