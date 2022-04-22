@@ -8,6 +8,9 @@
 import UIKit
 
 class ScheduleTableViewCell: UITableViewCell {
+    
+    static let id = "scheduleCell"
+    
     private lazy var lessonName = UILabel(
         initialText: "LESSON NAME",
         textColor: .label,
@@ -75,11 +78,11 @@ class ScheduleTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupConstaints()
+        
+        addSubview(cellIcon)
+        addSubview(topStackView)
+        addSubview(lessonTime)
+        addSubview(bottomStackView)
     }
     
     @available(*, unavailable)
@@ -87,8 +90,13 @@ class ScheduleTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupConstaints()
+        selectionStyle = .none
+    }
+    
     private func setupConstaints() {
-        addSubview(cellIcon)
         NSLayoutConstraint.activate([
             cellIcon.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             cellIcon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
@@ -96,7 +104,6 @@ class ScheduleTableViewCell: UITableViewCell {
             cellIcon.widthAnchor.constraint(equalToConstant: 25)
         ])
         
-        addSubview(topStackView)
         NSLayoutConstraint.activate([
             topStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             topStackView.leadingAnchor.constraint(equalTo: cellIcon.trailingAnchor, constant: 5),
@@ -104,14 +111,12 @@ class ScheduleTableViewCell: UITableViewCell {
             topStackView.heightAnchor.constraint(equalToConstant: 25)
         ])
         
-        addSubview(lessonTime)
         NSLayoutConstraint.activate([
             lessonTime.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             lessonTime.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             lessonTime.widthAnchor.constraint(equalToConstant: 100)
         ])
         
-        addSubview(bottomStackView)
         NSLayoutConstraint.activate([
             bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             bottomStackView.leadingAnchor.constraint(equalTo: lessonTime.trailingAnchor, constant: 10),

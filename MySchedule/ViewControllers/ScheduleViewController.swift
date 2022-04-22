@@ -34,10 +34,6 @@ class ScheduleViewController: UIViewController {
         return tableview
     }()
     
-    private let scheduleCellID = "scheduleCell"
-    
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +46,10 @@ class ScheduleViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: scheduleCellID)
+        tableView.register(
+            ScheduleTableViewCell.self,
+            forCellReuseIdentifier: ScheduleTableViewCell.id
+        )
         
         expandCalendarButton.addTarget(
             self,
@@ -74,11 +73,17 @@ class ScheduleViewController: UIViewController {
     
     // MARK: - SwipeGestureRecognizer
     private func swipeAction() {
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        let swipeUp = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(handleSwipe)
+        )
         swipeUp.direction = .up
         calendar.addGestureRecognizer(swipeUp)
         
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        let swipeDown = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(handleSwipe)
+        )
         swipeDown.direction = .down
         calendar.addGestureRecognizer(swipeDown)
     }
@@ -92,14 +97,22 @@ class ScheduleViewController: UIViewController {
     }
 }
 
+// MARK: - TableViewDelegate and TableViewDataSource
+
 extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         5
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: scheduleCellID,
+            withIdentifier: ScheduleTableViewCell.id,
             for: indexPath
         ) as! ScheduleTableViewCell
         
@@ -112,7 +125,10 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
         80
     }
 }
@@ -129,7 +145,11 @@ extension ScheduleViewController: FSCalendarDelegate, FSCalendarDataSource {
         view.layoutIfNeeded()
     }
     
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    func calendar(
+        _ calendar: FSCalendar,
+        didSelect date: Date,
+        at monthPosition: FSCalendarMonthPosition
+    ) {
         print(date)
     }
 }

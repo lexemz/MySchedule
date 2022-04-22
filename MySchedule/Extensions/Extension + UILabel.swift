@@ -10,9 +10,9 @@ import UIKit
 extension UILabel {
     convenience init(
         initialText: String,
-        textColor: UIColor,
+        textColor: UIColor = .label,
         textAlignment: NSTextAlignment,
-        adjustsFontSizeToFitWidth: Bool
+        adjustsFontSizeToFitWidth: Bool = true
     ) {
         self.init()
         self.text = initialText
