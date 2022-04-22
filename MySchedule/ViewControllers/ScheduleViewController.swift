@@ -13,6 +13,8 @@ class ScheduleViewController: UIViewController {
     private lazy var calendar: FSCalendar = {
         let calendar = FSCalendar()
         calendar.scope = .week
+        calendar.customCalendarAppearance()
+        calendar.translatesAutoresizingMaskIntoConstraints = false
         return calendar
     }()
 
@@ -22,17 +24,33 @@ class ScheduleViewController: UIViewController {
         btn.setTitleColor(UIColor.systemBlue, for: .normal)
         btn.titleLabel?.minimumScaleFactor = 0.5
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
+        btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
+    
+    private lazy var tableView: UITableView = {
+        let tableview = UITableView()
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        return tableview
+    }()
+    
+    private let scheduleCellID = "scheduleCell"
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+        
         navigationItem.title = "Schedule"
         
         calendar.dataSource = self
         calendar.delegate = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: scheduleCellID)
         
         expandCalendarButton.addTarget(
             self,
@@ -41,7 +59,7 @@ class ScheduleViewController: UIViewController {
         )
         
         setConstaints()
-        swipeAction()
+        swipeAction() 
     }
     
     @objc func expandCalendarButtonPressed() {
@@ -74,6 +92,31 @@ class ScheduleViewController: UIViewController {
     }
 }
 
+extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: scheduleCellID,
+            for: indexPath
+        ) as! ScheduleTableViewCell
+        
+        switch indexPath.row {
+        case 0: cell.chahgeIconColor(.systemBlue)
+        case 1: cell.chahgeIconColor(.systemOrange)
+        default: cell.chahgeIconColor(.systemGray)
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
+    }
+}
+
 // MARK: - FSCalendarDelegate and FSCalendarDataSource
 
 extension ScheduleViewController: FSCalendarDelegate, FSCalendarDataSource {
@@ -97,9 +140,7 @@ extension ScheduleViewController {
     func setConstaints() {
         let safeArea = view.safeAreaLayoutGuide
         
-        calendar.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(calendar)
-        
+
         calendarHeightConstraint = NSLayoutConstraint(
             item: calendar,
             attribute: .height,
@@ -111,19 +152,27 @@ extension ScheduleViewController {
         )
         calendar.addConstraint(calendarHeightConstraint)
         
+        view.addSubview(calendar)
         NSLayoutConstraint.activate([
             calendar.topAnchor.constraint(equalTo: safeArea.topAnchor),
             calendar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             calendar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
         ])
         
-        expandCalendarButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(expandCalendarButton)
         NSLayoutConstraint.activate([
             expandCalendarButton.topAnchor.constraint(equalTo: calendar.bottomAnchor, constant: 0),
             expandCalendarButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
             expandCalendarButton.widthAnchor.constraint(equalToConstant: 100),
             expandCalendarButton.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: expandCalendarButton.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])
     }
 }
