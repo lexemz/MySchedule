@@ -36,9 +36,11 @@ class ScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureScreen()
+    }
+    
+    private func configureScreen() {
         view.backgroundColor = .systemBackground
-        
         navigationItem.title = "Schedule"
         
         calendar.dataSource = self
@@ -58,7 +60,7 @@ class ScheduleViewController: UIViewController {
         )
         
         setConstaints()
-        swipeAction() 
+        swipeAction()
     }
     
     @objc func expandCalendarButtonPressed() {
