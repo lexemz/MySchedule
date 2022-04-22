@@ -10,16 +10,22 @@ import UIKit
 extension UILabel {
     convenience init(
         initialText: String,
+        fontSize: CGFloat = 16,
         textColor: UIColor = .label,
         textAlignment: NSTextAlignment,
-        adjustsFontSizeToFitWidth: Bool = true
+        adjustsFontSizeToFitWidth: Bool = true,
+        numberOfLines: Int = 1
     ) {
         self.init()
         self.text = initialText
         self.textColor = textColor
         self.textAlignment = textAlignment
         self.adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth
-//        self.backgroundColor = .red
+        self.font = font.withSize(fontSize)
+        self.numberOfLines = numberOfLines
+        
         translatesAutoresizingMaskIntoConstraints = false
+        
+//        self.backgroundColor = .red
     }
 }
