@@ -68,8 +68,14 @@ final class ScheduleViewController: UIViewController {
             for: .touchUpInside
         )
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addButtonTapped)
+        )
+        
         setConstaints()
-        swipeAction()
+        configureExpandCalendarSwipeAction()
     }
     
     @objc private func expandCalendarButtonPressed() {
@@ -82,9 +88,13 @@ final class ScheduleViewController: UIViewController {
         }
     }
     
+    @objc private func addButtonTapped() {
+        print("tap")
+    }
+    
     // MARK: SwipeGestureRecognizer
 
-    private func swipeAction() {
+    private func configureExpandCalendarSwipeAction() {
         let swipeUp = UISwipeGestureRecognizer(
             target: self,
             action: #selector(handleSwipe)
