@@ -137,9 +137,8 @@
 		782187DA2816AC0F008810ED /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				789A9199280F2DA4006F6B61 /* ScheduleViewController.swift */,
-				782187DD2816ACB6008810ED /* FormScheduleTableViewController.swift */,
-				78C8C07D2812BCF100A090E0 /* Cells */,
+				782187E62816E275008810ED /* Schedule */,
+				782187E72816E284008810ED /* FormSchedule */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -165,6 +164,32 @@
 			isa = PBXGroup;
 			children = (
 				78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		782187E62816E275008810ED /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				789A9199280F2DA4006F6B61 /* ScheduleViewController.swift */,
+				782187E82816E2B5008810ED /* Cells */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		782187E72816E284008810ED /* FormSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				782187DD2816ACB6008810ED /* FormScheduleTableViewController.swift */,
+				78C8C07D2812BCF100A090E0 /* Cells */,
+			);
+			path = FormSchedule;
+			sourceTree = "<group>";
+		};
+		782187E82816E2B5008810ED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -260,7 +285,6 @@
 		78C8C07D2812BCF100A090E0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */,
 				782187DF2816B252008810ED /* FormScheduleTableViewCell.swift */,
 			);
 			path = Cells;

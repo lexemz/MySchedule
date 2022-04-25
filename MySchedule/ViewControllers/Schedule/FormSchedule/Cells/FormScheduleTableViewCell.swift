@@ -15,15 +15,14 @@ class FormScheduleTableViewCell: UITableViewCell {
 
     // MARK: - UI Elements
 
-    lazy var backgroundViewCell: UIView = {
+    private lazy var backgroundViewCell: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
-        view.backgroundColor = .systemBackground
         return view
     }()
 
-    lazy var cellLabel: UILabel = {
+    private lazy var cellLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -43,6 +42,15 @@ class FormScheduleTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         setupConstraints()
+    }
+
+    func configure(title: String) {
+        cellLabel.text = title
+        backgroundViewCell.backgroundColor = .systemBackground
+    }
+
+    func setBackgroundColor(_ viewColor: UIColor) {
+        backgroundViewCell.backgroundColor = viewColor
     }
 }
 
