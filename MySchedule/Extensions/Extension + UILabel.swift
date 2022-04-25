@@ -12,7 +12,7 @@ extension UILabel {
         initialText: String,
         fontSize: CGFloat = 16,
         textColor: UIColor = .label,
-        textAlignment: NSTextAlignment,
+        textAlignment: NSTextAlignment = .left,
         adjustsFontSizeToFitWidth: Bool = true,
         numberOfLines: Int = 1
     ) {
