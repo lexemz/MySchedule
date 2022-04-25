@@ -130,6 +130,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		782187DA2816AC0F008810ED /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				789A9199280F2DA4006F6B61 /* ScheduleViewController.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		782187DB2816AC17008810ED /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				789A91CB280F3071006F6B61 /* TasksViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		782187DC2816AC1C008810ED /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				789A91CD280F3080006F6B61 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		789A9189280F2DA3006F6B61 = {
 			isa = PBXGroup;
 			children = (
@@ -212,9 +236,9 @@
 		789A91C8280F2EDB006F6B61 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				789A9199280F2DA4006F6B61 /* ScheduleViewController.swift */,
-				789A91CB280F3071006F6B61 /* TasksViewController.swift */,
-				789A91CD280F3080006F6B61 /* ContactsViewController.swift */,
+				782187DA2816AC0F008810ED /* Schedule */,
+				782187DB2816AC17008810ED /* Tasks */,
+				782187DC2816AC1C008810ED /* Contacts */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
