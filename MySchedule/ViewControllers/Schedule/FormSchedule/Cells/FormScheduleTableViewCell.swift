@@ -27,12 +27,15 @@ class FormScheduleTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    private var cellSwitch: UISwitch?
 
     // MARK: - Cell LifeCycle
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
+        selectionStyle = .none
     }
 
     @available(*, unavailable)
@@ -41,6 +44,7 @@ class FormScheduleTableViewCell: UITableViewCell {
     }
 
     override func layoutSubviews() {
+        super.layoutSubviews()
         setupConstraints()
     }
 
@@ -51,6 +55,24 @@ class FormScheduleTableViewCell: UITableViewCell {
 
     func setBackgroundColor(_ viewColor: UIColor) {
         backgroundViewCell.backgroundColor = viewColor
+    }
+    
+    func enableSwitchInCell() {
+        cellSwitch = UISwitch()
+        cellSwitch?.isOn = true
+        cellSwitch?.translatesAutoresizingMaskIntoConstraints = false
+        
+        cellSwitch?.addTarget(
+            self,
+            action: #selector(switchIsToggled),
+            for: .valueChanged
+        )
+    }
+    
+    @objc private func switchIsToggled(state: UISwitch) {
+        if state.isOn {
+            print("switch is on")
+        }
     }
 }
 
@@ -69,7 +91,15 @@ extension FormScheduleTableViewCell {
         addSubview(cellLabel)
         NSLayoutConstraint.activate([
             cellLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            cellLabel.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 15)
+            cellLabel.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 16)
+        ])
+        
+        guard let cellSwitch = cellSwitch else { return }
+        
+        addSubview(cellSwitch)
+        NSLayoutConstraint.activate([
+            cellSwitch.centerYAnchor.constraint(equalTo: backgroundViewCell.centerYAnchor),
+            cellSwitch.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -16)
         ])
     }
 }

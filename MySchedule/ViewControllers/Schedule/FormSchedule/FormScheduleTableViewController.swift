@@ -103,9 +103,12 @@ extension FormScheduleTableViewController {
         
         cell.configure(title: cellTitle)
         
-        if sections[indexPath.section].rawValue == "COLOR" {
+        if indexPath.section == 3 {
             cell.setBackgroundColor(.systemPink)
-            print(1)
+        }
+        
+        if indexPath.section == 4 {
+            cell.enableSwitchInCell()
         }
         
         return cell
