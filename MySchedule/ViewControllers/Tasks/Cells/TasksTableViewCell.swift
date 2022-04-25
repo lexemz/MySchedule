@@ -74,6 +74,7 @@ final class TasksTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         setupConstraints()
     }
     

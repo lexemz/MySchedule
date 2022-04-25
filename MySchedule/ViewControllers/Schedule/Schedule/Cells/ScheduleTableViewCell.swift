@@ -92,6 +92,7 @@ final class ScheduleTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         setupConstaints()
     }
     
