@@ -76,8 +76,14 @@ final class TasksViewController: UIViewController {
             for: .touchUpInside
         )
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addButtonTapped)
+        )
+        
         setConstaints()
-        swipeAction()
+        configureExpandCalendarSwipeAction()
     }
     
     @objc private func expandCalendarButtonPressed() {
@@ -90,14 +96,24 @@ final class TasksViewController: UIViewController {
         }
     }
     
+    @objc private func addButtonTapped() {
+        print("tap")
+    }
+    
     // MARK: SwipeGestureRecognizer
 
-    private func swipeAction() {
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+    private func configureExpandCalendarSwipeAction() {
+        let swipeUp = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(handleSwipe)
+        )
         swipeUp.direction = .up
         calendar.addGestureRecognizer(swipeUp)
         
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        let swipeDown = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(handleSwipe)
+        )
         swipeDown.direction = .down
         calendar.addGestureRecognizer(swipeDown)
     }
