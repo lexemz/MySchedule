@@ -89,7 +89,9 @@ final class ScheduleViewController: UIViewController {
     }
     
     @objc private func addButtonTapped() {
-        print("tap")
+        let formVC = FormScheduleTableViewController()
+        let formNavigationVC = UINavigationController(rootViewController: formVC)
+        present(formNavigationVC, animated: true)
     }
     
     // MARK: SwipeGestureRecognizer

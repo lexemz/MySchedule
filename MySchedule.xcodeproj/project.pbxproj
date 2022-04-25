@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		40D184956CC70867919735AE /* Pods_MySchedule_MyScheduleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A56B79AAD3EC5044CAF8D5C /* Pods_MySchedule_MyScheduleUITests.framework */; };
+		782187DE2816ACB6008810ED /* FormScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782187DD2816ACB6008810ED /* FormScheduleTableViewController.swift */; };
+		782187E02816B252008810ED /* FormScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782187DF2816B252008810ED /* FormScheduleTableViewCell.swift */; };
 		789A9196280F2DA4006F6B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A9195280F2DA4006F6B61 /* AppDelegate.swift */; };
 		789A9198280F2DA4006F6B61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A9197280F2DA4006F6B61 /* SceneDelegate.swift */; };
 		789A919A280F2DA4006F6B61 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A9199280F2DA4006F6B61 /* ScheduleViewController.swift */; };
@@ -50,6 +52,8 @@
 		558663FF7D61C5C46A1EE863 /* Pods-MyScheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyScheduleTests.debug.xcconfig"; path = "Target Support Files/Pods-MyScheduleTests/Pods-MyScheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73179EEDD92A301B46BECE83 /* Pods_MySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76DEEC04E5A16025CB0E9BFA /* Pods-MyScheduleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyScheduleTests.release.xcconfig"; path = "Target Support Files/Pods-MyScheduleTests/Pods-MyScheduleTests.release.xcconfig"; sourceTree = "<group>"; };
+		782187DD2816ACB6008810ED /* FormScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormScheduleTableViewController.swift; sourceTree = "<group>"; };
+		782187DF2816B252008810ED /* FormScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		789A9192280F2DA4006F6B61 /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		789A9195280F2DA4006F6B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		789A9197280F2DA4006F6B61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				789A9199280F2DA4006F6B61 /* ScheduleViewController.swift */,
+				782187DD2816ACB6008810ED /* FormScheduleTableViewController.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 			children = (
 				78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */,
 				78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */,
+				782187DF2816B252008810ED /* FormScheduleTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -519,9 +525,11 @@
 				789A919A280F2DA4006F6B61 /* ScheduleViewController.swift in Sources */,
 				789A9196280F2DA4006F6B61 /* AppDelegate.swift in Sources */,
 				789A91CC280F3071006F6B61 /* TasksViewController.swift in Sources */,
+				782187E02816B252008810ED /* FormScheduleTableViewCell.swift in Sources */,
 				78E7EE772812095D00DC108F /* Extension + FSCalendar .swift in Sources */,
 				78C8C07C2812B14B00A090E0 /* Extension + UILabel.swift in Sources */,
 				78E7EE6F281200FF00DC108F /* ScheduleTableViewCell.swift in Sources */,
+				782187DE2816ACB6008810ED /* FormScheduleTableViewController.swift in Sources */,
 				789A91CA280F2F10006F6B61 /* MainTabBarController.swift in Sources */,
 				78C8C07A2812ABDB00A090E0 /* Extension + UIStackVIew.swift in Sources */,
 				789A9198280F2DA4006F6B61 /* SceneDelegate.swift in Sources */,
