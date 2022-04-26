@@ -136,22 +136,63 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		780C73B02817FE30003B363A /* Alerts */ = {
+		780C73B02817FE30003B363A /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				780C73B328180CEC003B363A /* AlertManager.swift */,
 			);
-			path = Alerts;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		782187E22816CBA1008810ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */,
-				782187DF2816B252008810ED /* ScheduleFormTableViewCell.swift */,
-				78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */,
+				78452D572818312300D258B9 /* Schedule */,
+				78452D582818312B00D258B9 /* Tasks */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		78452D522818309F00D258B9 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				789A9199280F2DA4006F6B61 /* ScheduleViewController.swift */,
+				782187DD2816ACB6008810ED /* ScheduleFormTableViewController.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		78452D55281830BD00D258B9 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				789A91CB280F3071006F6B61 /* TasksViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		78452D56281830C600D258B9 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				789A91CD280F3080006F6B61 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		78452D572818312300D258B9 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */,
+				782187DF2816B252008810ED /* ScheduleFormTableViewCell.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		78452D582818312B00D258B9 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */,
+			);
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 		789A9189280F2DA3006F6B61 = {
@@ -180,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				789A91C8280F2EDB006F6B61 /* ViewControllers */,
-				780C73B02817FE30003B363A /* Alerts */,
+				780C73B02817FE30003B363A /* Services */,
 				78E7EE6D281200C600DC108F /* Controllers */,
 				78E7EE78281209A500DC108F /* Extensions */,
 				789A91C7280F2E54006F6B61 /* Application */,
@@ -236,10 +277,9 @@
 		789A91C8280F2EDB006F6B61 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				789A9199280F2DA4006F6B61 /* ScheduleViewController.swift */,
-				782187DD2816ACB6008810ED /* ScheduleFormTableViewController.swift */,
-				789A91CB280F3071006F6B61 /* TasksViewController.swift */,
-				789A91CD280F3080006F6B61 /* ContactsViewController.swift */,
+				78452D522818309F00D258B9 /* Schedule */,
+				78452D55281830BD00D258B9 /* Tasks */,
+				78452D56281830C600D258B9 /* Contacts */,
 				782187E22816CBA1008810ED /* Cells */,
 			);
 			path = ViewControllers;
