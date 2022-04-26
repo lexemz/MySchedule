@@ -15,7 +15,6 @@ enum AddScheduleEventTableConfiguration: String, CaseIterable {
     case color = "COLOR"
     case period = "PERIOD"
     
-    
     var cellsInSection: Int {
         switch self {
         case .dateAndTime:
@@ -48,7 +47,6 @@ enum AddScheduleEventTableConfiguration: String, CaseIterable {
 }
 
 class AddScheduleEventTableViewController: UITableViewController {
-    
     private let headerID = "headerForFormScheduleTableViewController"
     private let sections = AddScheduleEventTableConfiguration.allCases
     
@@ -76,8 +74,8 @@ class AddScheduleEventTableViewController: UITableViewController {
 }
 
 // MARK: - TableViewDataSourse & TableViewDelegate methods
+
 extension AddScheduleEventTableViewController {
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         sections.count
     }
@@ -141,5 +139,51 @@ extension AddScheduleEventTableViewController {
         }
 
         return header
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! AddEventScheduleTableViewCell
+        let alertManager = AlertManager.shared
+        
+        switch indexPath {
+        // DATA AND TIME CASES
+        case [0, 0]: alertManager.showAlertWithDatePicker(onScreen: self) { _, _, stringDate in
+                cell.setUserLabel(stringDate)
+            }
+        case [0, 1]: alertManager.showAlertWithTimePicker(onScreen: self) { _, stringTime in
+                cell.setUserLabel(stringTime)
+            }
+        // NAME, TYPE, BUILDUNG CASES
+        case [1, 0]: alertManager.showAlertWithTextField(
+                onScreen: self,
+                title: "Event Name"
+            ) { text in
+                cell.setUserLabel(text)
+            }
+        case [1, 1]: alertManager.showAlertWithTextField(
+                onScreen: self,
+                title: "Event Type"
+            ) { text in
+                cell.setUserLabel(text)
+            }
+        case [1, 2]: alertManager.showAlertWithTextField(
+                onScreen: self,
+                title: "Event Position"
+            ) { text in
+                cell.setUserLabel(text)
+            }
+        // TEACHER NAME CASE
+        case [2, 0]: alertManager.showAlertWithTextField(
+            onScreen: self,
+            title: "Teacher Name"
+            ) { text in
+            cell.setUserLabel(text)
+            }
+        // TEACHER NAME SELECTION
+        case [3, 0]: break // TODO: fill
+        // COLOR SELECTION
+        case [4, 0]: break // TODO: fill
+        default: print("Error")
+        }
     }
 }
