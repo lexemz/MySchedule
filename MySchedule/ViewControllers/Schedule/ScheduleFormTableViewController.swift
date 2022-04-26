@@ -109,6 +109,10 @@ extension ScheduleFormTableViewController {
             cell.enableSwitchInCell()
         }
         
+        if indexPath.section != 3 && indexPath.section != 4 {
+            cell.enableCheckmarkInCell()
+        }
+        
         return cell
     }
     
@@ -147,41 +151,46 @@ extension ScheduleFormTableViewController {
         
         switch indexPath {
         // DATA AND TIME CASES
-        case [0, 0]: alertManager.showAlertWithDatePicker(onScreen: self) { _, _, stringDate in
+        case [0, 0]:
+            alertManager.showAlertWithDatePicker(onScreen: self) { _, _, stringDate in
                 cell.setUserLabel(stringDate)
             }
-        case [0, 1]: alertManager.showAlertWithTimePicker(onScreen: self) { _, stringTime in
+        case [0, 1]:
+            alertManager.showAlertWithTimePicker(onScreen: self) { _, stringTime in
                 cell.setUserLabel(stringTime)
             }
         // NAME, TYPE, BUILDUNG CASES
-        case [1, 0]: alertManager.showAlertWithTextField(
+        case [1, 0]:
+            alertManager.showAlertWithTextField(
                 onScreen: self,
                 title: "Event Name"
             ) { text in
                 cell.setUserLabel(text)
             }
-        case [1, 1]: alertManager.showAlertWithTextField(
+        case [1, 1]:
+            alertManager.showAlertWithTextField(
                 onScreen: self,
                 title: "Event Type"
             ) { text in
                 cell.setUserLabel(text)
             }
-        case [1, 2]: alertManager.showAlertWithTextField(
+        case [1, 2]:
+            alertManager.showAlertWithTextField(
                 onScreen: self,
                 title: "Event Position"
             ) { text in
                 cell.setUserLabel(text)
             }
         // TEACHER NAME CASE
-        case [2, 0]: alertManager.showAlertWithTextField(
-            onScreen: self,
-            title: "Teacher Name"
-            ) { text in
-            cell.setUserLabel(text)
-            }
-        // TEACHER NAME SELECTION
-        case [3, 0]: break // TODO: fill
+        case [2, 0]:
+            let teachersVC = TeachersViewController()
+            let teachersNC = UINavigationController(rootViewController: teachersVC)
+            present(teachersNC, animated: true)
         // COLOR SELECTION
+        case [3, 0]:
+            let colorVC = ColorPickerViewController()
+            let colorNC = UINavigationController(rootViewController: colorVC)
+            present(colorNC, animated: true)
         case [4, 0]: break // TODO: fill
         default: print("Error")
         }

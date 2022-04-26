@@ -80,6 +80,17 @@ class ScheduleFormTableViewCell: UITableViewCell {
         )
     }
     
+    func enableCheckmarkInCell() {
+        let symbolImage = UIImage(systemName: "plus")?.withTintColor(.systemGray)
+        let symbolTextAttachment = NSTextAttachment()
+        symbolTextAttachment.image = symbolImage
+        let attributexText = NSMutableAttributedString()
+        attributexText.append(NSAttributedString(attachment: symbolTextAttachment))
+        
+        
+        userDataLabel.attributedText = attributexText
+    }
+    
     @objc private func switchIsToggled(state: UISwitch) {
         if state.isOn {
             print("switch is on")
