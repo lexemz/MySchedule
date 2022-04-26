@@ -1,5 +1,5 @@
 //
-//  AddEventScheduleTableViewCell.swift
+//  ScheduleFormTableViewCell.swift
 //  MySchedule
 //
 //  Created by Igor on 25.04.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddEventScheduleTableViewCell: UITableViewCell {
+class ScheduleFormTableViewCell: UITableViewCell {
     // MARK: - Public Properties
 
     static let id = "scheduleFormCell"
@@ -89,7 +89,7 @@ class AddEventScheduleTableViewCell: UITableViewCell {
 
 // MARK: - Setup Constraints
 
-extension AddEventScheduleTableViewCell {
+extension ScheduleFormTableViewCell {
     private func setupConstraints() {
         addSubview(backgroundViewCell)
         NSLayoutConstraint.activate([

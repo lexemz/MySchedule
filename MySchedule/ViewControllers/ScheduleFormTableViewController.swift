@@ -1,5 +1,5 @@
 //
-//  AddScheduleEventTableConfiguration.swift
+//  ScheduleFormTableViewController.swift
 //  MySchedule
 //
 //  Created by Igor on 25.04.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum AddScheduleEventTableConfiguration: String, CaseIterable {
+enum ScheduleFormTableConfiguration: String, CaseIterable {
     // Sections on TableView
     case dateAndTime = "DATE AND TIME"
     case lesson = "LESSON"
@@ -46,9 +46,9 @@ enum AddScheduleEventTableConfiguration: String, CaseIterable {
     }
 }
 
-class AddScheduleEventTableViewController: UITableViewController {
+class ScheduleFormTableViewController: UITableViewController {
     private let headerID = "headerForFormScheduleTableViewController"
-    private let sections = AddScheduleEventTableConfiguration.allCases
+    private let sections = ScheduleFormTableConfiguration.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +60,8 @@ class AddScheduleEventTableViewController: UITableViewController {
         title = "Add Event"
         
         tableView.register(
-            AddEventScheduleTableViewCell.self,
-            forCellReuseIdentifier: AddEventScheduleTableViewCell.id
+            ScheduleFormTableViewCell.self,
+            forCellReuseIdentifier: ScheduleFormTableViewCell.id
         )
         tableView.register(
             UITableViewHeaderFooterView.self,
@@ -75,7 +75,7 @@ class AddScheduleEventTableViewController: UITableViewController {
 
 // MARK: - TableViewDataSourse & TableViewDelegate methods
 
-extension AddScheduleEventTableViewController {
+extension ScheduleFormTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         sections.count
     }
@@ -92,9 +92,9 @@ extension AddScheduleEventTableViewController {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: AddEventScheduleTableViewCell.id,
+            withIdentifier: ScheduleFormTableViewCell.id,
             for: indexPath
-        ) as! AddEventScheduleTableViewCell
+        ) as! ScheduleFormTableViewCell
         
         let cellsSectionTitles = sections[indexPath.section].cellsNames
         let cellTitle = cellsSectionTitles[indexPath.row]
@@ -116,7 +116,7 @@ extension AddScheduleEventTableViewController {
         _ tableView: UITableView,
         heightForRowAt indexPath: IndexPath
     ) -> CGFloat {
-        AddEventScheduleTableViewCell.height
+        ScheduleFormTableViewCell.height
     }
     
     override func tableView(
@@ -142,7 +142,7 @@ extension AddScheduleEventTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! AddEventScheduleTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! ScheduleFormTableViewCell
         let alertManager = AlertManager.shared
         
         switch indexPath {

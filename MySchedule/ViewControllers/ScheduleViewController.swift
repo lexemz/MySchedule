@@ -89,7 +89,7 @@ final class ScheduleViewController: UIViewController {
     }
     
     @objc private func addButtonTapped() {
-        let formVC = AddScheduleEventTableViewController()
+        let formVC = ScheduleFormTableViewController()
         let formNavigationVC = UINavigationController(rootViewController: formVC)
         present(formNavigationVC, animated: true)
     }
