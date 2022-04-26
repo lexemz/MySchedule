@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		40D184956CC70867919735AE /* Pods_MySchedule_MyScheduleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A56B79AAD3EC5044CAF8D5C /* Pods_MySchedule_MyScheduleUITests.framework */; };
+		780C73B428180CEC003B363A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780C73B328180CEC003B363A /* AlertManager.swift */; };
 		782187DE2816ACB6008810ED /* AddScheduleEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782187DD2816ACB6008810ED /* AddScheduleEventTableViewController.swift */; };
 		782187E02816B252008810ED /* AddEventScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782187DF2816B252008810ED /* AddEventScheduleTableViewCell.swift */; };
 		789A9196280F2DA4006F6B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A9195280F2DA4006F6B61 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		558663FF7D61C5C46A1EE863 /* Pods-MyScheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyScheduleTests.debug.xcconfig"; path = "Target Support Files/Pods-MyScheduleTests/Pods-MyScheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73179EEDD92A301B46BECE83 /* Pods_MySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76DEEC04E5A16025CB0E9BFA /* Pods-MyScheduleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyScheduleTests.release.xcconfig"; path = "Target Support Files/Pods-MyScheduleTests/Pods-MyScheduleTests.release.xcconfig"; sourceTree = "<group>"; };
+		780C73B328180CEC003B363A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		782187DD2816ACB6008810ED /* AddScheduleEventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleEventTableViewController.swift; sourceTree = "<group>"; };
 		782187DF2816B252008810ED /* AddEventScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		789A9192280F2DA4006F6B61 /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		780C73B02817FE30003B363A /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				780C73B328180CEC003B363A /* AlertManager.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		782187E22816CBA1008810ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				789A91C8280F2EDB006F6B61 /* ViewControllers */,
+				780C73B02817FE30003B363A /* Alerts */,
 				78E7EE6D281200C600DC108F /* Controllers */,
 				78E7EE78281209A500DC108F /* Extensions */,
 				789A91C7280F2E54006F6B61 /* Application */,
@@ -492,6 +503,7 @@
 			files = (
 				789A919A280F2DA4006F6B61 /* ScheduleViewController.swift in Sources */,
 				789A9196280F2DA4006F6B61 /* AppDelegate.swift in Sources */,
+				780C73B428180CEC003B363A /* AlertManager.swift in Sources */,
 				789A91CC280F3071006F6B61 /* TasksViewController.swift in Sources */,
 				782187E02816B252008810ED /* AddEventScheduleTableViewCell.swift in Sources */,
 				78E7EE772812095D00DC108F /* Extension + FSCalendar .swift in Sources */,
