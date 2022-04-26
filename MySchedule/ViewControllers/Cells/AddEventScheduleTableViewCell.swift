@@ -28,6 +28,13 @@ class AddEventScheduleTableViewCell: UITableViewCell {
         return label
     }()
     
+    private lazy var userDataLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemGray
+        return label
+    }()
+    
     private var cellSwitch: UISwitch?
 
     // MARK: - Cell LifeCycle
@@ -55,6 +62,10 @@ class AddEventScheduleTableViewCell: UITableViewCell {
 
     func setBackgroundColor(_ viewColor: UIColor) {
         backgroundViewCell.backgroundColor = viewColor
+    }
+    
+    func setUserLabel(_ string: String) {
+        userDataLabel.text = string
     }
     
     func enableSwitchInCell() {
@@ -94,8 +105,15 @@ extension AddEventScheduleTableViewCell {
             cellLabel.leadingAnchor.constraint(equalTo: backgroundViewCell.leadingAnchor, constant: 16)
         ])
         
+        addSubview(userDataLabel)
+        NSLayoutConstraint.activate([
+            userDataLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            userDataLabel.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -16)
+        ])
+        
         guard let cellSwitch = cellSwitch else { return }
         
+        userDataLabel.isHidden = true
         addSubview(cellSwitch)
         NSLayoutConstraint.activate([
             cellSwitch.centerYAnchor.constraint(equalTo: backgroundViewCell.centerYAnchor),
