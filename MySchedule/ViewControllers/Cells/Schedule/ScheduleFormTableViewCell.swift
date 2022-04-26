@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum ScheduleFormCellType {
+    case text
+    case switcher
+    case colorPicker
+}
+
 class ScheduleFormTableViewCell: UITableViewCell {
     // MARK: - Public Properties
 
@@ -41,7 +47,16 @@ class ScheduleFormTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .clear
+        if #available(iOS 14.0, *) {
+            backgroundColor = .clear
+        } else {
+            backgroundColor = UIColor(
+                red: 50.0/255.0,
+                green: 50.0/255.0,
+                blue: 52.0/255.0,
+                alpha: 1.0
+            )
+        }
         selectionStyle = .none
     }
 
@@ -54,21 +69,34 @@ class ScheduleFormTableViewCell: UITableViewCell {
         super.layoutSubviews()
         setupConstraints()
     }
+    
+    // MARK: - Publick methods
 
-    func configure(title: String) {
+    func configure(title: String, cellType: ScheduleFormCellType) {
         cellLabel.text = title
         backgroundViewCell.backgroundColor = .systemBackground
-    }
-
-    func setBackgroundColor(_ viewColor: UIColor) {
-        backgroundViewCell.backgroundColor = viewColor
+        
+        switch cellType {
+        case .text:
+            enableCheckmarkInCell()
+        case .switcher:
+            enableSwitchInCell()
+        case .colorPicker:
+            setBackgroundColor(.systemBrown)
+        }
     }
     
     func setUserLabel(_ string: String) {
         userDataLabel.text = string
     }
     
-    func enableSwitchInCell() {
+    // MARK: - Private methods
+
+    private func setBackgroundColor(_ viewColor: UIColor) {
+        backgroundViewCell.backgroundColor = viewColor
+    }
+
+    private func enableSwitchInCell() {
         cellSwitch = UISwitch()
         cellSwitch?.isOn = true
         cellSwitch?.translatesAutoresizingMaskIntoConstraints = false
@@ -80,13 +108,12 @@ class ScheduleFormTableViewCell: UITableViewCell {
         )
     }
     
-    func enableCheckmarkInCell() {
+    private func enableCheckmarkInCell() {
         let symbolImage = UIImage(systemName: "plus")?.withTintColor(.systemGray)
         let symbolTextAttachment = NSTextAttachment()
         symbolTextAttachment.image = symbolImage
         let attributexText = NSMutableAttributedString()
         attributexText.append(NSAttributedString(attachment: symbolTextAttachment))
-        
         
         userDataLabel.attributedText = attributexText
     }

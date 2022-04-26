@@ -99,18 +99,13 @@ extension ScheduleFormTableViewController {
         let cellsSectionTitles = sections[indexPath.section].cellsNames
         let cellTitle = cellsSectionTitles[indexPath.row]
         
-        cell.configure(title: cellTitle)
-        
-        if indexPath.section == 3 {
-            cell.setBackgroundColor(.systemPink)
-        }
-        
-        if indexPath.section == 4 {
-            cell.enableSwitchInCell()
-        }
-        
-        if indexPath.section != 3 && indexPath.section != 4 {
-            cell.enableCheckmarkInCell()
+        switch indexPath {
+        case [3, 0]:
+            cell.configure(title: cellTitle, cellType: .colorPicker)
+        case [4, 0]:
+            cell.configure(title: cellTitle, cellType: .switcher)
+        default:
+            cell.configure(title: cellTitle, cellType: .text)
         }
         
         return cell
