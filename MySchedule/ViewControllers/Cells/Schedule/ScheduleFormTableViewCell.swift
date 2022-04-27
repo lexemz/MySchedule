@@ -47,16 +47,7 @@ class ScheduleFormTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        if #available(iOS 14.0, *) {
-            backgroundColor = .clear
-        } else {
-            backgroundColor = UIColor(
-                red: 50.0/255.0,
-                green: 50.0/255.0,
-                blue: 52.0/255.0,
-                alpha: 1.0
-            )
-        }
+        backgroundColor = .clear
         selectionStyle = .none
     }
 
