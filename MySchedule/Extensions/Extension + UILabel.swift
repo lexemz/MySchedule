@@ -11,6 +11,7 @@ extension UILabel {
     convenience init(
         initialText: String,
         fontSize: CGFloat = 16,
+        bold: Bool = false,
         textColor: UIColor = .label,
         textAlignment: NSTextAlignment = .left,
         adjustsFontSizeToFitWidth: Bool = true,
@@ -23,6 +24,7 @@ extension UILabel {
         self.adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth
         self.font = font.withSize(fontSize)
         self.numberOfLines = numberOfLines
+        if bold { self.font = UIFont.boldSystemFont(ofSize: 16) }
         
         translatesAutoresizingMaskIntoConstraints = false
         
