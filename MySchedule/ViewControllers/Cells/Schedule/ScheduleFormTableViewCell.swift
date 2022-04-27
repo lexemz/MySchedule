@@ -25,6 +25,7 @@ class ScheduleFormTableViewCell: UITableViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
+        view.backgroundColor = .systemBackground
         return view
     }()
 
@@ -65,7 +66,6 @@ class ScheduleFormTableViewCell: UITableViewCell {
 
     func configure(title: String, cellType: ScheduleFormCellType) {
         cellLabel.text = title
-        backgroundViewCell.backgroundColor = .systemBackground
         
         switch cellType {
         case .text:
