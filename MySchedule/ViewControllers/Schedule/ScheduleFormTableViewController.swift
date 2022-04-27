@@ -118,6 +118,18 @@ extension ScheduleFormTableViewController {
         ScheduleFormTableViewCell.height
     }
     
+    // Расстояние у tableview в iOS 15.0 отличается от всех предыдущих
+    override func tableView(
+        _ tableView: UITableView,
+        heightForHeaderInSection section: Int
+    ) -> CGFloat {
+        if #available(iOS 14.0, *) {
+            return 25
+        } else {
+            return 45
+        }
+    }
+    
     override func tableView(
         _ tableView: UITableView,
         viewForHeaderInSection section: Int
