@@ -14,12 +14,14 @@ class HeaderForCell: UITableViewHeaderFooterView {
     private lazy var headerLabel = UILabel(
         initialText: "",
         fontSize: 16,
+        bold: true,
         textColor: .systemGray
     )
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         setupConstraints()
+        contentView.backgroundColor = .systemGray5
     }
     
     required init?(coder: NSCoder) {
@@ -35,8 +37,8 @@ extension HeaderForCell {
     func setupConstraints() {
         addSubview(headerLabel)
         NSLayoutConstraint.activate([
-            headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            headerLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+            headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            headerLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2)
         ])
     }
 }
