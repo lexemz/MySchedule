@@ -24,6 +24,7 @@
 		789A91CA280F2F10006F6B61 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A91C9280F2F10006F6B61 /* MainTabBarController.swift */; };
 		789A91CC280F3071006F6B61 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A91CB280F3071006F6B61 /* TasksViewController.swift */; };
 		789A91CE280F3080006F6B61 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A91CD280F3080006F6B61 /* ContactsViewController.swift */; };
+		78A32A7A28194CA200D10B70 /* HeaderForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A32A7928194CA200D10B70 /* HeaderForCell.swift */; };
 		78C8C07A2812ABDB00A090E0 /* Extension + UIStackVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C0792812ABDB00A090E0 /* Extension + UIStackVIew.swift */; };
 		78C8C07C2812B14B00A090E0 /* Extension + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C07B2812B14B00A090E0 /* Extension + UILabel.swift */; };
 		78C8C07F2812E83200A090E0 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */; };
@@ -75,6 +76,7 @@
 		789A91C9280F2F10006F6B61 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		789A91CB280F3071006F6B61 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		789A91CD280F3080006F6B61 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		78A32A7928194CA200D10B70 /* HeaderForCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderForCell.swift; sourceTree = "<group>"; };
 		78C8C0792812ABDB00A090E0 /* Extension + UIStackVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIStackVIew.swift"; sourceTree = "<group>"; };
 		78C8C07B2812B14B00A090E0 /* Extension + UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UILabel.swift"; sourceTree = "<group>"; };
 		78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		782187E22816CBA1008810ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				78A32A7928194CA200D10B70 /* HeaderForCell.swift */,
 				78452D572818312300D258B9 /* Schedule */,
 				78452D582818312B00D258B9 /* Tasks */,
 			);
@@ -563,6 +566,7 @@
 				789A9198280F2DA4006F6B61 /* SceneDelegate.swift in Sources */,
 				789A91CE280F3080006F6B61 /* ContactsViewController.swift in Sources */,
 				78C8C07F2812E83200A090E0 /* TasksTableViewCell.swift in Sources */,
+				78A32A7A28194CA200D10B70 /* HeaderForCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

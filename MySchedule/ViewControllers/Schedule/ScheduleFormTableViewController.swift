@@ -47,7 +47,7 @@ enum ScheduleFormTableConfiguration: String, CaseIterable {
 }
 
 class ScheduleFormTableViewController: UITableViewController {
-    private let headerID = "headerForFormScheduleTableViewController"
+
     private let sections = ScheduleFormTableConfiguration.allCases
     
     override func viewDidLoad() {
@@ -64,8 +64,8 @@ class ScheduleFormTableViewController: UITableViewController {
             forCellReuseIdentifier: ScheduleFormTableViewCell.id
         )
         tableView.register(
-            UITableViewHeaderFooterView.self,
-            forHeaderFooterViewReuseIdentifier: headerID
+            HeaderForCell.self,
+            forHeaderFooterViewReuseIdentifier: HeaderForCell.headerID
         )
         
         tableView.separatorStyle = .none
@@ -123,19 +123,12 @@ extension ScheduleFormTableViewController {
         viewForHeaderInSection section: Int
     ) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(
-            withIdentifier: headerID
-        )
+            withIdentifier: HeaderForCell.headerID
+        ) as! HeaderForCell
         
-        let headerText = sections[section].rawValue
+        let headerTitle = sections[section].rawValue
         
-        if #available(iOS 14.0, *) {
-            var content = header?.defaultContentConfiguration()
-            content?.text = headerText
-            
-            header?.contentConfiguration = content
-        } else {
-            header?.textLabel?.text = headerText
-        }
+        header.configureHeader(with: headerTitle)
 
         return header
     }
