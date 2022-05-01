@@ -153,7 +153,6 @@
 		782187E22816CBA1008810ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				78A32A7928194CA200D10B70 /* HeaderForCell.swift */,
 				78452D572818312300D258B9 /* Schedule */,
 				78452D582818312B00D258B9 /* Tasks */,
 			);
@@ -203,6 +202,14 @@
 			path = Tasks;
 			sourceTree = "<group>";
 		};
+		78606116281F20DD000C5985 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				78A32A7928194CA200D10B70 /* HeaderForCell.swift */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		789A9189280F2DA3006F6B61 = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				789A91C8280F2EDB006F6B61 /* ViewControllers */,
+				782187E22816CBA1008810ED /* Cells */,
+				78606116281F20DD000C5985 /* Headers */,
 				780C73B02817FE30003B363A /* Services */,
 				78E7EE6D281200C600DC108F /* Controllers */,
 				78E7EE78281209A500DC108F /* Extensions */,
@@ -289,7 +298,6 @@
 				78452D55281830BD00D258B9 /* Tasks */,
 				78452D56281830C600D258B9 /* Contacts */,
 				78452D5B281832E000D258B9 /* ColorPickerViewController.swift */,
-				782187E22816CBA1008810ED /* Cells */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
