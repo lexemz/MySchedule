@@ -83,7 +83,7 @@ class ScheduleFormTableViewCell: UITableViewCell {
     
     // MARK: - Private methods
 
-    private func setBackgroundColor(_ viewColor: UIColor) {
+    func setBackgroundColor(_ viewColor: UIColor) {
         backgroundViewCell.backgroundColor = viewColor
     }
 

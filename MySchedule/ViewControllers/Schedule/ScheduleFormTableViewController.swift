@@ -71,9 +71,35 @@ class ScheduleFormTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .systemGray5
     }
+    
+    private func presentColorPicker(on cell: ScheduleFormTableViewCell) {
+        let colorVC = ColorPickerViewController()
+        colorVC.delegate = self
+        colorVC.modalPresentationStyle = .popover
+        
+        let popOverColorVC = colorVC.popoverPresentationController
+        popOverColorVC?.delegate = self
+        popOverColorVC?.sourceView = cell
+        popOverColorVC?.sourceRect = CGRect(
+            x: cell.bounds.midX,
+            y: cell.bounds.minY,
+            width: 0,
+            height: 0
+        )
+        
+        // 220 220
+        colorVC.preferredContentSize = CGSize(width: 220, height: 100)
+        present(colorVC, animated: true)
+    }
+    
+    private func presentTeachersVC() {
+        let teachersVC = TeachersViewController()
+        let teachersNC = UINavigationController(rootViewController: teachersVC)
+        present(teachersNC, animated: true)
+    }
 }
 
-// MARK: - TableViewDataSourse & TableViewDelegate methods
+// MARK: - TableViewDataSourse & TableViewDelegate
 
 extension ScheduleFormTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -118,7 +144,10 @@ extension ScheduleFormTableViewController {
         ScheduleFormTableViewCell.height
     }
     
-    // Расстояние у tableview в iOS 15.0 отличается от всех предыдущих
+    /*
+    Расстояние headers у tableView в iOS 15.0 отличается от всех предыдущих
+    поэтому выставляем примерно одинаковые отступы
+    */
     override func tableView(
         _ tableView: UITableView,
         heightForHeaderInSection section: Int
@@ -145,7 +174,10 @@ extension ScheduleFormTableViewController {
         return header
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
         let cell = tableView.cellForRow(at: indexPath) as! ScheduleFormTableViewCell
         let alertManager = AlertManager.shared
         
@@ -183,16 +215,30 @@ extension ScheduleFormTableViewController {
             }
         // TEACHER NAME CASE
         case [2, 0]:
-            let teachersVC = TeachersViewController()
-            let teachersNC = UINavigationController(rootViewController: teachersVC)
-            present(teachersNC, animated: true)
+            presentTeachersVC()
         // COLOR SELECTION
         case [3, 0]:
-            let colorVC = ColorPickerViewController()
-            let colorNC = UINavigationController(rootViewController: colorVC)
-            present(colorNC, animated: true)
+            presentColorPicker(on: cell)
         case [4, 0]: break // TODO: fill
         default: print("Error")
         }
+    }
+}
+
+// MARK: - UIPopoverPresentationControllerDelegate
+extension ScheduleFormTableViewController: UIPopoverPresentationControllerDelegate {
+    
+    func adaptivePresentationStyle(
+        for controller: UIPresentationController
+    ) -> UIModalPresentationStyle {
+        .none
+    }
+}
+
+// MARK: - ColorPickerDelegate
+extension ScheduleFormTableViewController: ColorPickerDelegate {
+    func colorPickerDidColorSelected(selectedColor: UIColor) {
+        let colorCell = tableView.cellForRow(at: [3, 0]) as! ScheduleFormTableViewCell
+        colorCell.setBackgroundColor(selectedColor)
     }
 }
