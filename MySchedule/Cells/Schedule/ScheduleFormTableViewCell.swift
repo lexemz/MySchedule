@@ -11,6 +11,7 @@ enum ScheduleFormCellType {
     case text
     case switcher
     case colorPicker
+    case movingToAnotherVC
 }
 
 class ScheduleFormTableViewCell: UITableViewCell {
@@ -69,11 +70,13 @@ class ScheduleFormTableViewCell: UITableViewCell {
         
         switch cellType {
         case .text:
-            enableCheckmarkInCell()
+            enableCheckmarkInCell("plus")
         case .switcher:
             enableSwitchInCell()
         case .colorPicker:
             setBackgroundColor(.systemBrown)
+        case .movingToAnotherVC:
+            enableCheckmarkInCell("chevron.right")
         }
     }
     
@@ -99,8 +102,8 @@ class ScheduleFormTableViewCell: UITableViewCell {
         )
     }
     
-    private func enableCheckmarkInCell() {
-        let symbolImage = UIImage(systemName: "plus")?.withTintColor(.systemGray)
+    private func enableCheckmarkInCell(_ name: String) {
+        let symbolImage = UIImage(systemName: name)?.withTintColor(.systemGray)
         let symbolTextAttachment = NSTextAttachment()
         symbolTextAttachment.image = symbolImage
         let attributexText = NSMutableAttributedString()

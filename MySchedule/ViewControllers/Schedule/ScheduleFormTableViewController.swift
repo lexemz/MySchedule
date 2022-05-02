@@ -126,6 +126,8 @@ extension ScheduleFormTableViewController {
         let cellTitle = cellsSectionTitles[indexPath.row]
         
         switch indexPath {
+        case [2, 0]:
+            cell.configure(title: cellTitle, cellType: .movingToAnotherVC)
         case [3, 0]:
             cell.configure(title: cellTitle, cellType: .colorPicker)
         case [4, 0]:
