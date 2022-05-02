@@ -73,6 +73,8 @@ class ColorPickerViewController: UIViewController {
         colorCollectionView.dataSource = self
         colorCollectionView.delegate = self
         
+        colorCollectionView.backgroundColor = .systemBackground
+        
         view.addSubview(colorCollectionView)
     }
 }
