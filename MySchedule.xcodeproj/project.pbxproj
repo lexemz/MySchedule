@@ -16,6 +16,9 @@
 		7840D36F28216FBD00BFFFD2 /* SwitcherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D36E28216FBD00BFFFD2 /* SwitcherTableViewCell.swift */; };
 		7840D3722821736B00BFFFD2 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D3712821736B00BFFFD2 /* TextFieldTableViewCell.swift */; };
 		7840D374282177ED00BFFFD2 /* TitleWithBageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D373282177ED00BFFFD2 /* TitleWithBageTableViewCell.swift */; };
+		7840D37728218B4900BFFFD2 /* ColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D37628218B4900BFFFD2 /* ColorPickerDelegate.swift */; };
+		7840D37928218B8900BFFFD2 /* TextFieldTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D37828218B8900BFFFD2 /* TextFieldTableViewCellDelegate.swift */; };
+		7840D37B28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D37A28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift */; };
 		78452D5A281831A200D258B9 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78452D59281831A200D258B9 /* TeachersViewController.swift */; };
 		78452D5C281832E000D258B9 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78452D5B281832E000D258B9 /* ColorPickerViewController.swift */; };
 		789A9196280F2DA4006F6B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A9195280F2DA4006F6B61 /* AppDelegate.swift */; };
@@ -69,6 +72,9 @@
 		7840D36E28216FBD00BFFFD2 /* SwitcherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherTableViewCell.swift; sourceTree = "<group>"; };
 		7840D3712821736B00BFFFD2 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		7840D373282177ED00BFFFD2 /* TitleWithBageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithBageTableViewCell.swift; sourceTree = "<group>"; };
+		7840D37628218B4900BFFFD2 /* ColorPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerDelegate.swift; sourceTree = "<group>"; };
+		7840D37828218B8900BFFFD2 /* TextFieldTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		7840D37A28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		78452D59281831A200D258B9 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		78452D5B281832E000D258B9 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		789A9192280F2DA4006F6B61 /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +197,16 @@
 			name = FormCells;
 			sourceTree = "<group>";
 		};
+		7840D37528218B0500BFFFD2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7840D37628218B4900BFFFD2 /* ColorPickerDelegate.swift */,
+				7840D37828218B8900BFFFD2 /* TextFieldTableViewCellDelegate.swift */,
+				7840D37A28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		78452D522818309F00D258B9 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +287,7 @@
 				7840D36828213D4300BFFFD2 /* Views */,
 				78E7EE6D281200C600DC108F /* Controllers */,
 				780C73B02817FE30003B363A /* Services */,
+				7840D37528218B0500BFFFD2 /* Protocols */,
 				78E7EE78281209A500DC108F /* Extensions */,
 				789A91C7280F2E54006F6B61 /* Application */,
 				789A91C5280F2E3D006F6B61 /* Resources */,
@@ -589,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7840D37728218B4900BFFFD2 /* ColorPickerDelegate.swift in Sources */,
 				789A919A280F2DA4006F6B61 /* ScheduleViewController.swift in Sources */,
 				789A9196280F2DA4006F6B61 /* AppDelegate.swift in Sources */,
 				7840D374282177ED00BFFFD2 /* TitleWithBageTableViewCell.swift in Sources */,
@@ -598,6 +616,7 @@
 				78452D5A281831A200D258B9 /* TeachersViewController.swift in Sources */,
 				7840D36F28216FBD00BFFFD2 /* SwitcherTableViewCell.swift in Sources */,
 				7840D36D282167D300BFFFD2 /* ColorPickTableViewCell.swift in Sources */,
+				7840D37B28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift in Sources */,
 				78452D5C281832E000D258B9 /* ColorPickerViewController.swift in Sources */,
 				7840D3722821736B00BFFFD2 /* TextFieldTableViewCell.swift in Sources */,
 				78E7EE772812095D00DC108F /* Extension + FSCalendar .swift in Sources */,
@@ -610,6 +629,7 @@
 				789A9198280F2DA4006F6B61 /* SceneDelegate.swift in Sources */,
 				789A91CE280F3080006F6B61 /* ContactsViewController.swift in Sources */,
 				78C8C07F2812E83200A090E0 /* TasksTableViewCell.swift in Sources */,
+				7840D37928218B8900BFFFD2 /* TextFieldTableViewCellDelegate.swift in Sources */,
 				78A32A7A28194CA200D10B70 /* HeaderForCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

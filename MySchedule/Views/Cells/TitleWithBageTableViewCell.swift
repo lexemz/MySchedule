@@ -8,8 +8,12 @@
 import UIKit
 
 class TitleWithBageTableViewCell: UITableViewCell {
+    // MARK: - Static Properties
+
     static let id = "TitleWithBageCell"
     
+    // MARK: - UI Elements
+
     private lazy var cellLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -23,11 +27,14 @@ class TitleWithBageTableViewCell: UITableViewCell {
         return label
     }()
     
+    // MARK: - View Lyfecycle
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .systemBackground
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -36,6 +43,8 @@ class TitleWithBageTableViewCell: UITableViewCell {
         super.layoutSubviews()
         setupConstraints()
     }
+    
+    // MARK: - Public Methods
     
     func configure(title: String, bage: String) {
         cellLabel.text = title
@@ -46,6 +55,8 @@ class TitleWithBageTableViewCell: UITableViewCell {
         userDataLabel.text = text
     }
     
+    // MARK: - Private Methods
+
     private func setupBage(_ name: String) {
         let symbolImage = UIImage(systemName: name)?.withTintColor(.systemGray)
         let symbolTextAttachment = NSTextAttachment()
@@ -56,6 +67,8 @@ class TitleWithBageTableViewCell: UITableViewCell {
         userDataLabel.attributedText = attributexText
     }
 }
+
+// MARK: - SetupConstraints
 
 extension TitleWithBageTableViewCell {
     private func setupConstraints() {
@@ -72,4 +85,3 @@ extension TitleWithBageTableViewCell {
         ])
     }
 }
-

@@ -36,10 +36,6 @@ enum ColorPickerColors: CaseIterable {
     }
 }
 
-protocol ColorPickerDelegate {
-    func colorPickerDidColorSelected(selectedColor: UIColor)
-}
-
 class ColorPickerViewController: UIViewController {
     var delegate: ColorPickerDelegate!
     private var colorCollectionView: UICollectionView!
@@ -80,6 +76,7 @@ class ColorPickerViewController: UIViewController {
 }
 
 // MARK: - UICollectionViewDelegate & UICollectionViewDataSource
+
 extension ColorPickerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         ColorPickerColors.allCases.count

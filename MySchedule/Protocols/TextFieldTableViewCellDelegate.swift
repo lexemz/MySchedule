@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol TextFieldTableViewCellDelegate: AnyObject {
+    func textFieldDidEndEditing(text: String, indexPath: IndexPath)
+}

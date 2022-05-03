@@ -8,43 +8,77 @@
 import UIKit
 
 class TextFieldTableViewCell: UITableViewCell {
+    // MARK: - Static properties
+
     static let id = "TextFieldCell"
-    
-    private lazy var textFiled: UITextField = {
+
+    // MARK: - UI Elements
+
+    private lazy var textField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
-    
+
+    private var indexPath: IndexPath!
+    private unowned var delegate: TextFieldTableViewCellDelegate!
+
+    // MARK: - View Lyfecycle
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .systemBackground
         selectionStyle = .none
+        textField.delegate = self
     }
-    
+
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         setupConstraints()
     }
-    
-    func configure(placeHolder: String) {
-        textFiled.placeholder = placeHolder
+
+    // MARK: - Public Methods
+
+    func configure(
+        _ indexPath: IndexPath,
+        placeHolder: String,
+        delegate: TextFieldTableViewCellDelegate
+    ) {
+        self.indexPath = indexPath
+        self.delegate = delegate
+        textField.placeholder = placeHolder
     }
 }
 
+// MARK: - SetupConstraints
+
 extension TextFieldTableViewCell {
     private func setupConstraints() {
-        addSubview(textFiled)
+        addSubview(textField)
         NSLayoutConstraint.activate([
-//            textFiled.centerYAnchor.constraint(equalTo: centerYAnchor),
-            textFiled.topAnchor.constraint(equalTo: topAnchor),
-            textFiled.bottomAnchor.constraint(equalTo: bottomAnchor),
-            textFiled.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            textFiled.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
+            //            textFiled.centerYAnchor.constraint(equalTo: centerYAnchor),
+            textField.topAnchor.constraint(equalTo: topAnchor),
+            textField.bottomAnchor.constraint(equalTo: bottomAnchor),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
         ])
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension TextFieldTableViewCell: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate.textFieldDidEndEditing(text: textField.text!, indexPath: indexPath)
     }
 }

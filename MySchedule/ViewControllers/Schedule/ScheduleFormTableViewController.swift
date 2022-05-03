@@ -47,8 +47,12 @@ enum ScheduleFormTableConfiguration: String, CaseIterable {
 }
 
 class ScheduleFormTableViewController: UITableViewController {
+    // MARK: - Private Methods
+
     private let sections = ScheduleFormTableConfiguration.allCases
     
+    // MARK: - ViewController Lifecycle
+
     override init(style: UITableView.Style) {
         super.init(style: style)
     }
@@ -63,6 +67,8 @@ class ScheduleFormTableViewController: UITableViewController {
         configureScreen()
     }
     
+    // MARK: - Private Methods
+
     private func configureScreen() {
         view.backgroundColor = .systemBackground
         title = "Add Event"
@@ -88,8 +94,12 @@ class ScheduleFormTableViewController: UITableViewController {
             forCellReuseIdentifier: TitleWithBageTableViewCell.id
         )
         
-//        tableView.separatorStyle = .none
-        tableView.backgroundColor = .systemGray5
+        view.backgroundColor = .systemGray5
+        
+        tableView.keyboardDismissMode = .onDrag
+        let tapGesture = UITapGestureRecognizer(target: tableView, action: #selector(UIView.endEditing(_:)))
+        tableView.addGestureRecognizer(tapGesture)
+        tapGesture.cancelsTouchesInView = false
     }
     
     private func presentColorPicker(on cell: ColorPickTableViewCell) {
@@ -145,27 +155,60 @@ extension ScheduleFormTableViewController {
         
         switch indexPath {
         case [0, 0]:
-            let bageCell = tableView.dequeueReusableCell(withIdentifier: TitleWithBageTableViewCell.id) as! TitleWithBageTableViewCell
+            let bageCell = tableView.dequeueReusableCell(
+                withIdentifier: TitleWithBageTableViewCell.id,
+                for: indexPath
+            ) as! TitleWithBageTableViewCell
             bageCell.configure(title: cellTitle, bage: "plus")
             return bageCell
         case [0, 1]:
-            let bageCell = tableView.dequeueReusableCell(withIdentifier: TitleWithBageTableViewCell.id) as! TitleWithBageTableViewCell
+            let bageCell = tableView.dequeueReusableCell(
+                withIdentifier: TitleWithBageTableViewCell.id, for:
+                indexPath
+            ) as! TitleWithBageTableViewCell
             bageCell.configure(title: cellTitle, bage: "plus")
             return bageCell
+        case [1, 0], [1, 1], [1, 2]:
+            let textFieldCell = tableView.dequeueReusableCell(
+                withIdentifier: TextFieldTableViewCell.id,
+                for: indexPath
+            ) as! TextFieldTableViewCell
+            
+            guard let indexPath = tableView.indexPath(for: textFieldCell) else { return UITableViewCell()
+            }
+            
+            textFieldCell.configure(
+                indexPath,
+                placeHolder: "Type \(cellTitle)",
+                delegate: self
+            )
+            return textFieldCell
         case [2, 0]:
-            let bageCell = tableView.dequeueReusableCell(withIdentifier: TitleWithBageTableViewCell.id) as! TitleWithBageTableViewCell
+            let bageCell = tableView.dequeueReusableCell(
+                withIdentifier: TitleWithBageTableViewCell.id,
+                for: indexPath
+            ) as! TitleWithBageTableViewCell
             bageCell.configure(title: cellTitle, bage: "chevron.right")
             return bageCell
         case [3, 0]:
-            return tableView.dequeueReusableCell(withIdentifier: ColorPickTableViewCell.id) as! ColorPickTableViewCell
+            return tableView.dequeueReusableCell(
+                withIdentifier: ColorPickTableViewCell.id,
+                for: indexPath
+            ) as! ColorPickTableViewCell
         case [4, 0]:
-            let switchCell = tableView.dequeueReusableCell(withIdentifier: SwitcherTableViewCell.id) as! SwitcherTableViewCell
-            switchCell.configure(title: cellTitle, state: true)
+            let switchCell = tableView.dequeueReusableCell(
+                withIdentifier: SwitcherTableViewCell.id,
+                for: indexPath
+            ) as! SwitcherTableViewCell
+            switchCell.configure(
+                [4, 0],
+                title: cellTitle,
+                state: true,
+                delegate: self
+            )
             return switchCell
         default:
-            let textFieldCell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.id) as! TextFieldTableViewCell
-            textFieldCell.configure(placeHolder: "Type \(cellTitle)")
-            return textFieldCell
+            return UITableViewCell()
         }
     }
     
@@ -180,7 +223,7 @@ extension ScheduleFormTableViewController {
      Расстояние headers у tableView в iOS 15.0 отличается от всех предыдущих
      поэтому выставляем примерно одинаковые отступы
      */
-    // TODO: Проверить, какие отступы на iOS 14
+    // FIXME: Проверить, какие отступы на iOS 14
     override func tableView(
         _ tableView: UITableView,
         heightForHeaderInSection section: Int
@@ -199,11 +242,8 @@ extension ScheduleFormTableViewController {
         let header = tableView.dequeueReusableHeaderFooterView(
             withIdentifier: HeaderForCell.headerID
         ) as! HeaderForCell
-        
         let headerTitle = sections[section].rawValue
-        
         header.configureHeader(with: headerTitle)
-
         return header
     }
     
@@ -216,14 +256,14 @@ extension ScheduleFormTableViewController {
             AlertManager.shared.showAlertWithDatePicker(onScreen: self) { _, _, stringDate in
                 let dateCell = tableView.cellForRow(at: [0, 0]) as! TitleWithBageTableViewCell
                 dateCell.addSecondTest(stringDate)
-                tableView.deselectRow(at: [0, 0], animated: true)
             }
+            tableView.deselectRow(at: [0, 0], animated: true)
         case [0, 1]:
             AlertManager.shared.showAlertWithTimePicker(onScreen: self) { _, stringTime in
                 let dateCell = tableView.cellForRow(at: [0, 1]) as! TitleWithBageTableViewCell
                 dateCell.addSecondTest(stringTime)
-                tableView.deselectRow(at: [0, 1], animated: true)
             }
+            tableView.deselectRow(at: [0, 1], animated: true)
         // TEACHER NAME CASE
         case [2, 0]:
             presentTeachersVC()
@@ -232,7 +272,8 @@ extension ScheduleFormTableViewController {
         case [3, 0]:
             let cell = tableView.cellForRow(at: indexPath) as! ColorPickTableViewCell
             presentColorPicker(on: cell)
-        default: Logger.debug("No action was expected")
+        default:
+            Logger.debug("No action was expected")
         }
     }
 }
@@ -254,5 +295,23 @@ extension ScheduleFormTableViewController: ColorPickerDelegate {
         let colorCell = tableView.cellForRow(at: [3, 0]) as! ColorPickTableViewCell
         colorCell.setColor(selectedColor)
         tableView.deselectRow(at: [3, 0], animated: true)
+    }
+}
+
+// MARK: - TextFieldTableViewCellDelegate
+
+extension ScheduleFormTableViewController: TextFieldTableViewCellDelegate {
+    func textFieldDidEndEditing(text: String, indexPath: IndexPath) {
+        Logger.debug(text)
+        Logger.debug(indexPath)
+    }
+}
+
+// MARK: - SwitcherTableViewCellDelegate
+
+extension ScheduleFormTableViewController: SwitcherTableViewCellDelegate {
+    func switchDidChangeValue(value: Bool, indexPath: IndexPath) {
+        Logger.debug(value)
+        Logger.debug(indexPath)
     }
 }
