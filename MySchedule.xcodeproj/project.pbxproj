@@ -159,6 +159,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		7840D36828213D4300BFFFD2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				782187E22816CBA1008810ED /* Cells */,
+				78606116281F20DD000C5985 /* Headers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		78452D522818309F00D258B9 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,10 +245,9 @@
 			isa = PBXGroup;
 			children = (
 				789A91C8280F2EDB006F6B61 /* ViewControllers */,
-				782187E22816CBA1008810ED /* Cells */,
-				78606116281F20DD000C5985 /* Headers */,
-				780C73B02817FE30003B363A /* Services */,
+				7840D36828213D4300BFFFD2 /* Views */,
 				78E7EE6D281200C600DC108F /* Controllers */,
+				780C73B02817FE30003B363A /* Services */,
 				78E7EE78281209A500DC108F /* Extensions */,
 				789A91C7280F2E54006F6B61 /* Application */,
 				789A91C5280F2E3D006F6B61 /* Resources */,
