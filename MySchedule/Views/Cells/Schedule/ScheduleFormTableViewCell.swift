@@ -114,7 +114,7 @@ class ScheduleFormTableViewCell: UITableViewCell {
     
     @objc private func switchIsToggled(state: UISwitch) {
         if state.isOn {
-            print("switch is on")
+            Logger.debug("Switch om cell is on")
         }
     }
 }

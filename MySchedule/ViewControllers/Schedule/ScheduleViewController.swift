@@ -174,7 +174,7 @@ extension ScheduleViewController: FSCalendarDelegate, FSCalendarDataSource {
         didSelect date: Date,
         at monthPosition: FSCalendarMonthPosition
     ) {
-        print(date)
+        Logger.debug(date)
     }
 }
 

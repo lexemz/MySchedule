@@ -97,7 +97,8 @@ final class TasksViewController: UIViewController {
     }
     
     @objc private func addButtonTapped() {
-        print("tap")
+        // TODO: Make form
+        Logger.debug("Add button tapped")
     }
     
     // MARK: SwipeGestureRecognizer
@@ -173,7 +174,7 @@ extension TasksViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date)
+        Logger.debug(date)
     }
 }
 
@@ -181,7 +182,7 @@ extension TasksViewController: FSCalendarDelegate, FSCalendarDataSource {
 
 extension TasksViewController: TasksTableViewCellDelegate {
     func buttonIsPressed(indexPath: IndexPath) {
-        print("tap cell in \(indexPath.row) row")
+        Logger.debug("tap cell in \(indexPath.row) row")
     }
 }
 

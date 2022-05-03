@@ -221,8 +221,9 @@ extension ScheduleFormTableViewController {
         // COLOR SELECTION
         case [3, 0]:
             presentColorPicker(on: cell)
+        //  REPEATING TASK
         case [4, 0]: break // TODO: fill
-        default: print("Error")
+        default: Logger.debug("No action was expected")
         }
     }
 }

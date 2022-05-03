@@ -11,6 +11,7 @@
 		780C73B428180CEC003B363A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780C73B328180CEC003B363A /* AlertManager.swift */; };
 		782187DE2816ACB6008810ED /* ScheduleFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782187DD2816ACB6008810ED /* ScheduleFormTableViewController.swift */; };
 		782187E02816B252008810ED /* ScheduleFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782187DF2816B252008810ED /* ScheduleFormTableViewCell.swift */; };
+		7840D36A28213E5000BFFFD2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D36928213E4F00BFFFD2 /* Logger.swift */; };
 		78452D5A281831A200D258B9 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78452D59281831A200D258B9 /* TeachersViewController.swift */; };
 		78452D5C281832E000D258B9 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78452D5B281832E000D258B9 /* ColorPickerViewController.swift */; };
 		789A9196280F2DA4006F6B61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789A9195280F2DA4006F6B61 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		780C73B328180CEC003B363A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		782187DD2816ACB6008810ED /* ScheduleFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFormTableViewController.swift; sourceTree = "<group>"; };
 		782187DF2816B252008810ED /* ScheduleFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFormTableViewCell.swift; sourceTree = "<group>"; };
+		7840D36928213E4F00BFFFD2 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		78452D59281831A200D258B9 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		78452D5B281832E000D258B9 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		789A9192280F2DA4006F6B61 /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				780C73B328180CEC003B363A /* AlertManager.swift */,
+				7840D36928213E4F00BFFFD2 /* Logger.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				782187DE2816ACB6008810ED /* ScheduleFormTableViewController.swift in Sources */,
 				789A91CA280F2F10006F6B61 /* MainTabBarController.swift in Sources */,
 				78C8C07A2812ABDB00A090E0 /* Extension + UIStackVIew.swift in Sources */,
+				7840D36A28213E5000BFFFD2 /* Logger.swift in Sources */,
 				789A9198280F2DA4006F6B61 /* SceneDelegate.swift in Sources */,
 				789A91CE280F3080006F6B61 /* ContactsViewController.swift in Sources */,
 				78C8C07F2812E83200A090E0 /* TasksTableViewCell.swift in Sources */,
