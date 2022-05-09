@@ -20,7 +20,7 @@ enum ScheduleFormTableConfiguration: String, CaseIterable {
         case .dateAndTime:
             return 2
         case .lesson:
-            return 3
+            return 4
         case .teacher:
             return 1
         case .color:
@@ -171,7 +171,7 @@ extension ScheduleFormTableViewController {
             ) as! TitleWithBageTableViewCell
             bageCell.configure(title: cellTitle, bage: "plus")
             return bageCell
-        case [1, 0], [1, 1], [1, 2]:
+        case [1, 0], [1, 1], [1, 2], [1, 3]:
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: TextFieldTableViewCell.id,
                 for: indexPath
