@@ -5,8 +5,12 @@
 //  Created by Igor on 03.05.2022.
 //
 
-import Foundation
+import UIKit
 
 protocol TextFieldTableViewCellDelegate: AnyObject {
-    func textFieldDidEndEditing(text: String, indexPath: IndexPath)
+    func textFieldShouldReturn(
+        indexPath: IndexPath,
+        probableNextIndexPath: IndexPath
+    )
+    func textFieldDidEndEditing(value: String?, at indexPath: IndexPath)
 }

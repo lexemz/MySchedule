@@ -97,7 +97,10 @@ class ScheduleFormTableViewController: UITableViewController {
         view.backgroundColor = .systemGray5
         
         tableView.keyboardDismissMode = .onDrag
-        let tapGesture = UITapGestureRecognizer(target: tableView, action: #selector(UIView.endEditing(_:)))
+        let tapGesture = UITapGestureRecognizer(
+            target: tableView,
+            action: #selector(UIView.endEditing(_:))
+        )
         tableView.addGestureRecognizer(tapGesture)
         tapGesture.cancelsTouchesInView = false
     }
@@ -169,20 +172,22 @@ extension ScheduleFormTableViewController {
             bageCell.configure(title: cellTitle, bage: "plus")
             return bageCell
         case [1, 0], [1, 1], [1, 2]:
-            let textFieldCell = tableView.dequeueReusableCell(
+            let cell = tableView.dequeueReusableCell(
                 withIdentifier: TextFieldTableViewCell.id,
                 for: indexPath
             ) as! TextFieldTableViewCell
             
-            guard let indexPath = tableView.indexPath(for: textFieldCell) else { return UITableViewCell()
+            guard let indexPath = tableView.indexPath(for: cell) else {
+                return UITableViewCell()
             }
             
-            textFieldCell.configure(
+            cell.configure(
                 indexPath,
-                placeHolder: "Type \(cellTitle)",
-                delegate: self
+                placeHolder: "\(cellTitle)"
             )
-            return textFieldCell
+            cell.delegate = self
+            
+            return cell
         case [2, 0]:
             let bageCell = tableView.dequeueReusableCell(
                 withIdentifier: TitleWithBageTableViewCell.id,
@@ -301,9 +306,19 @@ extension ScheduleFormTableViewController: ColorPickerDelegate {
 // MARK: - TextFieldTableViewCellDelegate
 
 extension ScheduleFormTableViewController: TextFieldTableViewCellDelegate {
-    func textFieldDidEndEditing(text: String, indexPath: IndexPath) {
-        Logger.debug(text)
-        Logger.debug(indexPath)
+    func textFieldDidEndEditing(value: String?, at indexPath: IndexPath) {
+        Logger.debug(value)
+    }
+    
+    func textFieldShouldReturn(indexPath: IndexPath, probableNextIndexPath: IndexPath) {
+        let currentCell = tableView.cellForRow(at: indexPath) as? TextFieldTableViewCell
+        let nextCell = tableView.cellForRow(at: probableNextIndexPath) as? TextFieldTableViewCell
+        
+        if let nextCell = nextCell {
+            nextCell.focus()
+        } else {
+            currentCell?.unfocus()
+        }
     }
 }
 

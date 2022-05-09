@@ -21,7 +21,7 @@ class TextFieldTableViewCell: UITableViewCell {
     }()
 
     private var indexPath: IndexPath!
-    private unowned var delegate: TextFieldTableViewCellDelegate!
+    unowned var delegate: TextFieldTableViewCellDelegate?
 
     // MARK: - View Lyfecycle
 
@@ -46,12 +46,36 @@ class TextFieldTableViewCell: UITableViewCell {
 
     func configure(
         _ indexPath: IndexPath,
-        placeHolder: String,
-        delegate: TextFieldTableViewCellDelegate
+        placeHolder: String
     ) {
         self.indexPath = indexPath
-        self.delegate = delegate
         textField.placeholder = placeHolder
+    }
+
+    func focus() {
+        textField.becomeFirstResponder()
+    }
+    
+    func unfocus() {
+        textField.resignFirstResponder()
+    }
+}
+
+extension TextFieldTableViewCell: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.textFieldDidEndEditing(value: textField.text, at: indexPath)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let probableNextIndexPath = IndexPath(
+            row: indexPath.row + 1,
+            section: indexPath.section
+        )
+        delegate?.textFieldShouldReturn(
+            indexPath: indexPath,
+            probableNextIndexPath: probableNextIndexPath
+        )
+        return true
     }
 }
 
@@ -61,24 +85,10 @@ extension TextFieldTableViewCell {
     private func setupConstraints() {
         addSubview(textField)
         NSLayoutConstraint.activate([
-            //            textFiled.centerYAnchor.constraint(equalTo: centerYAnchor),
             textField.topAnchor.constraint(equalTo: topAnchor),
             textField.bottomAnchor.constraint(equalTo: bottomAnchor),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
         ])
-    }
-}
-
-// MARK: - UITextFieldDelegate
-
-extension TextFieldTableViewCell: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        delegate.textFieldDidEndEditing(text: textField.text!, indexPath: indexPath)
     }
 }
