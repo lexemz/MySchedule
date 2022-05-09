@@ -77,6 +77,7 @@
 		7840D37A28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		78452D59281831A200D258B9 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
 		78452D5B281832E000D258B9 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		784DDA01282949490013DCB3 /* Tasks.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Tasks.md; sourceTree = "<group>"; };
 		789A9192280F2DA4006F6B61 /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		789A9195280F2DA4006F6B61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		789A9197280F2DA4006F6B61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +269,7 @@
 		789A9189280F2DA3006F6B61 = {
 			isa = PBXGroup;
 			children = (
+				784DDA01282949490013DCB3 /* Tasks.md */,
 				789A9194280F2DA4006F6B61 /* MySchedule */,
 				789A91AB280F2DA5006F6B61 /* MyScheduleTests */,
 				789A91B5280F2DA5006F6B61 /* MyScheduleUITests */,
