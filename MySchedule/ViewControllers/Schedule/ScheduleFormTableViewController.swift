@@ -159,27 +159,20 @@ extension ScheduleFormTableViewController {
         switch indexPath {
         case [0, 0]:
             let bageCell = tableView.dequeueReusableCell(
-                withIdentifier: TitleWithBageTableViewCell.id,
-                for: indexPath
+                withIdentifier: TitleWithBageTableViewCell.id
             ) as! TitleWithBageTableViewCell
             bageCell.configure(title: cellTitle, bage: "plus")
             return bageCell
         case [0, 1]:
             let bageCell = tableView.dequeueReusableCell(
-                withIdentifier: TitleWithBageTableViewCell.id, for:
-                indexPath
+                withIdentifier: TitleWithBageTableViewCell.id
             ) as! TitleWithBageTableViewCell
             bageCell.configure(title: cellTitle, bage: "plus")
             return bageCell
         case [1, 0], [1, 1], [1, 2], [1, 3]:
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: TextFieldTableViewCell.id,
-                for: indexPath
+                withIdentifier: TextFieldTableViewCell.id
             ) as! TextFieldTableViewCell
-            
-            guard let indexPath = tableView.indexPath(for: cell) else {
-                return UITableViewCell()
-            }
             
             cell.configure(
                 indexPath,
@@ -190,20 +183,17 @@ extension ScheduleFormTableViewController {
             return cell
         case [2, 0]:
             let bageCell = tableView.dequeueReusableCell(
-                withIdentifier: TitleWithBageTableViewCell.id,
-                for: indexPath
+                withIdentifier: TitleWithBageTableViewCell.id
             ) as! TitleWithBageTableViewCell
             bageCell.configure(title: cellTitle, bage: "chevron.right")
             return bageCell
         case [3, 0]:
             return tableView.dequeueReusableCell(
-                withIdentifier: ColorPickTableViewCell.id,
-                for: indexPath
+                withIdentifier: ColorPickTableViewCell.id
             ) as! ColorPickTableViewCell
         case [4, 0]:
             let switchCell = tableView.dequeueReusableCell(
-                withIdentifier: SwitcherTableViewCell.id,
-                for: indexPath
+                withIdentifier: SwitcherTableViewCell.id
             ) as! SwitcherTableViewCell
             switchCell.configure(
                 [4, 0],
