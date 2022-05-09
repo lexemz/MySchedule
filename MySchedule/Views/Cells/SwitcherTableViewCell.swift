@@ -29,7 +29,7 @@ class SwitcherTableViewCell: UITableViewCell {
     // MARK: - Private Properties
 
     private var indexPath: IndexPath!
-    private unowned var delegate: SwitcherTableViewCellDelegate!
+    unowned var delegate: SwitcherTableViewCellDelegate!
 
     // MARK: - View Lyfecycle
 
@@ -52,13 +52,8 @@ class SwitcherTableViewCell: UITableViewCell {
     // MARK: - Public Methods
 
     func configure(
-        _ indexPath: IndexPath,
-        title: String,
-        state: Bool,
-        delegate: SwitcherTableViewCellDelegate
-    ) {
+        _ indexPath: IndexPath, title: String, state: Bool) {
         self.indexPath = indexPath
-        self.delegate = delegate
         cellLabel.text = title
         switcher.isOn = state
 

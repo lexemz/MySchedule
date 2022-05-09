@@ -208,9 +208,9 @@ extension ScheduleFormTableViewController {
             switchCell.configure(
                 [4, 0],
                 title: cellTitle,
-                state: true,
-                delegate: self
+                state: true
             )
+            switchCell.delegate = self
             return switchCell
         default:
             return UITableViewCell()
