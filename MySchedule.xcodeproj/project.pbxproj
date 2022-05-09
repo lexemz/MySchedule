@@ -237,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */,
-				782187DF2816B252008810ED /* ScheduleFormTableViewCell.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -248,6 +247,14 @@
 				78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */,
 			);
 			path = Tasks;
+			sourceTree = "<group>";
+		};
+		784DDA00282928BC0013DCB3 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				782187DF2816B252008810ED /* ScheduleFormTableViewCell.swift */,
+			);
+			path = Old;
 			sourceTree = "<group>";
 		};
 		78606116281F20DD000C5985 /* Headers */ = {
@@ -292,6 +299,7 @@
 				789A91C7280F2E54006F6B61 /* Application */,
 				789A91C5280F2E3D006F6B61 /* Resources */,
 				789A91C6280F2E49006F6B61 /* Storyboards */,
+				784DDA00282928BC0013DCB3 /* Old */,
 			);
 			path = MySchedule;
 			sourceTree = "<group>";
