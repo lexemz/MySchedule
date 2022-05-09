@@ -17,11 +17,11 @@ class Logger {
     ) {
         let result = """
         
-        [DEBUG] 🔹 -----
+        🔹 [DEBUG]
         [DATA]: \(String(describing: data() ?? ""))
         [FILE]: \(extractFileName(from: file))
         [LINE]: \(line)
-        
+        ----------------
         """
         print(result)
     }
@@ -32,13 +32,13 @@ class Logger {
         line: Int = #line
     ) {
         let result = """
-        
-        [DEBUG] 🔸 -----
+
+        🔸 [DEBUG]
         [ERROR]: \(error)
         [DESCRIPTION]: \(error.localizedDescription)
         [FILE]: \(extractFileName(from: file))
         [LINE]: \(line)
-        
+        ----------------
         """
         print(result)
     }
