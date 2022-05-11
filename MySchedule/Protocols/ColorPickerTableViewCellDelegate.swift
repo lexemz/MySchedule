@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol ColorPickerDelegate {
+protocol ColorPickerTableViewCellDelegate {
     func colorPickerDidColorSelected(selectedColor: UIColor)
 }

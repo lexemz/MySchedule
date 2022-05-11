@@ -21,7 +21,7 @@ class ColorPickerViewController: UIViewController {
         .systemTeal
     ]
     
-    var delegate: ColorPickerDelegate!
+    var delegate: ColorPickerTableViewCellDelegate!
     private var colorCollectionView: UICollectionView!
     
     private let cellID = "cellForColor"

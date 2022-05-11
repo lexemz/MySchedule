@@ -222,9 +222,9 @@ extension ScheduleFormTableViewController: UIPopoverPresentationControllerDelega
     }
 }
 
-// MARK: - ColorPickerDelegate
+// MARK: - ColorPickerTableViewCellDelegate
 
-extension ScheduleFormTableViewController: ColorPickerDelegate {
+extension ScheduleFormTableViewController: ColorPickerTableViewCellDelegate {
     func colorPickerDidColorSelected(selectedColor: UIColor) {
         let colorCell = tableView.cellForRow(at: [3, 0]) as! ColorPickTableViewCell
         colorCell.setColor(selectedColor)

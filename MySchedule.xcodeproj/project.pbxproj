@@ -16,7 +16,7 @@
 		7840D36F28216FBD00BFFFD2 /* SwitcherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D36E28216FBD00BFFFD2 /* SwitcherTableViewCell.swift */; };
 		7840D3722821736B00BFFFD2 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D3712821736B00BFFFD2 /* TextFieldTableViewCell.swift */; };
 		7840D374282177ED00BFFFD2 /* TitleWithBageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D373282177ED00BFFFD2 /* TitleWithBageTableViewCell.swift */; };
-		7840D37728218B4900BFFFD2 /* ColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D37628218B4900BFFFD2 /* ColorPickerDelegate.swift */; };
+		7840D37728218B4900BFFFD2 /* ColorPickerTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D37628218B4900BFFFD2 /* ColorPickerTableViewCellDelegate.swift */; };
 		7840D37928218B8900BFFFD2 /* TextFieldTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D37828218B8900BFFFD2 /* TextFieldTableViewCellDelegate.swift */; };
 		7840D37B28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D37A28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift */; };
 		78452D5A281831A200D258B9 /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78452D59281831A200D258B9 /* TeachersViewController.swift */; };
@@ -73,7 +73,7 @@
 		7840D36E28216FBD00BFFFD2 /* SwitcherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherTableViewCell.swift; sourceTree = "<group>"; };
 		7840D3712821736B00BFFFD2 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		7840D373282177ED00BFFFD2 /* TitleWithBageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithBageTableViewCell.swift; sourceTree = "<group>"; };
-		7840D37628218B4900BFFFD2 /* ColorPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerDelegate.swift; sourceTree = "<group>"; };
+		7840D37628218B4900BFFFD2 /* ColorPickerTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		7840D37828218B8900BFFFD2 /* TextFieldTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		7840D37A28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		78452D59281831A200D258B9 /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		7840D37528218B0500BFFFD2 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7840D37628218B4900BFFFD2 /* ColorPickerDelegate.swift */,
+				7840D37628218B4900BFFFD2 /* ColorPickerTableViewCellDelegate.swift */,
 				7840D37828218B8900BFFFD2 /* TextFieldTableViewCellDelegate.swift */,
 				7840D37A28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift */,
 			);
@@ -619,7 +619,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7840D37728218B4900BFFFD2 /* ColorPickerDelegate.swift in Sources */,
+				7840D37728218B4900BFFFD2 /* ColorPickerTableViewCellDelegate.swift in Sources */,
 				789A919A280F2DA4006F6B61 /* ScheduleViewController.swift in Sources */,
 				789A9196280F2DA4006F6B61 /* AppDelegate.swift in Sources */,
 				7840D374282177ED00BFFFD2 /* TitleWithBageTableViewCell.swift in Sources */,

@@ -152,9 +152,9 @@ extension TasksFormTableViewController: UIPopoverPresentationControllerDelegate 
     }
 }
 
-// MARK: - ColorPickerDelegate
+// MARK: - ColorPickerTableViewCellDelegate
 
-extension TasksFormTableViewController: ColorPickerDelegate {
+extension TasksFormTableViewController: ColorPickerTableViewCellDelegate {
     func colorPickerDidColorSelected(selectedColor: UIColor) {
         let colorCell = tableView.cellForRow(at: [2, 0]) as! ColorPickTableViewCell
         colorCell.setColor(selectedColor)
