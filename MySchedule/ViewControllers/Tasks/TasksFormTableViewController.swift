@@ -130,7 +130,7 @@ extension TasksFormTableViewController {
             AlertManager.shared.showAlertWithDatePicker(
                 onScreen: self) { _, _, stringDate in
                     let dateCell = tableView.cellForRow(at: [0, 0]) as! TitleWithBageTableViewCell
-                    dateCell.addSecondTest(stringDate)
+                    dateCell.setSecondText(stringDate)
                     tableView.deselectRow(at: [0, 0], animated: true)
             }
         case [2, 0]:

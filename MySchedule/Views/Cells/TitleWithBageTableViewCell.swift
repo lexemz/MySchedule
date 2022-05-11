@@ -51,7 +51,7 @@ class TitleWithBageTableViewCell: UITableViewCell {
         setupBage(bage)
     }
     
-    func addSecondTest(_ text: String) {
+    func setSecondText(_ text: String) {
         userDataLabel.text = text
     }
     

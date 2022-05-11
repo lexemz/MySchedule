@@ -189,13 +189,13 @@ extension ScheduleFormTableViewController {
         case [0, 0]:
             AlertManager.shared.showAlertWithDatePicker(onScreen: self) { _, _, stringDate in
                 let dateCell = tableView.cellForRow(at: [0, 0]) as! TitleWithBageTableViewCell
-                dateCell.addSecondTest(stringDate)
+                dateCell.setSecondText(stringDate)
             }
             tableView.deselectRow(at: [0, 0], animated: true)
         case [0, 1]:
             AlertManager.shared.showAlertWithTimePicker(onScreen: self) { _, stringTime in
                 let dateCell = tableView.cellForRow(at: [0, 1]) as! TitleWithBageTableViewCell
-                dateCell.addSecondTest(stringTime)
+                dateCell.setSecondText(stringTime)
             }
             tableView.deselectRow(at: [0, 1], animated: true)
         // TEACHER NAME CASE
