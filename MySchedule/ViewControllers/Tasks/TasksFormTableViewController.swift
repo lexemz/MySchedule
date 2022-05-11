@@ -9,15 +9,15 @@ import UIKit
 
 enum TasksFormTableConfiguration: String, CaseIterable {
     case date = "DATE"
-    case titleAndTask = "TITLE AND TASK"
+    case titleAndDescription = "TITLE AND DESCRIPTION"
     case color = "COLOR"
     
     var cellsTitles: [String] {
         switch self {
         case .date:
             return ["Date"]
-        case .titleAndTask:
-            return ["Title", "Task"]
+        case .titleAndDescription:
+            return ["Title", "Description"]
         case .color:
             return ["Color"]
         }
