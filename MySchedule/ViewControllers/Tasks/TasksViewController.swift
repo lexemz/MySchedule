@@ -97,8 +97,9 @@ final class TasksViewController: UIViewController {
     }
     
     @objc private func addButtonTapped() {
-        // TODO: Make form
-        Logger.debug("Add button tapped")
+        let formTVC = TasksFormTableViewController(style: .insetGrouped)
+        let formNavgationVC = UINavigationController(rootViewController: formTVC)
+        present(formNavgationVC, animated: true)
     }
     
     // MARK: SwipeGestureRecognizer
