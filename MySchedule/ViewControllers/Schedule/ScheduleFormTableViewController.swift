@@ -15,22 +15,7 @@ enum ScheduleFormTableConfiguration: String, CaseIterable {
     case color = "COLOR"
     case period = "PERIOD"
     
-    var cellsInSection: Int {
-        switch self {
-        case .dateAndTime:
-            return 2
-        case .lesson:
-            return 4
-        case .teacher:
-            return 1
-        case .color:
-            return 1
-        case .period:
-            return 1
-        }
-    }
-    
-    var cellsNames: [String] {
+    var cellsTitles: [String] {
         switch self {
         case .dateAndTime:
             return ["Date", "Time"]
@@ -47,11 +32,11 @@ enum ScheduleFormTableConfiguration: String, CaseIterable {
 }
 
 class ScheduleFormTableViewController: UITableViewController {
-    // MARK: - Private Methods
+    // MARK: - Private Properties
 
     private let sections = ScheduleFormTableConfiguration.allCases
     
-    // MARK: - ViewController Lifecycle
+    // MARK: - Override Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +46,7 @@ class ScheduleFormTableViewController: UITableViewController {
     // MARK: - Private Methods
 
     private func configureScreen() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray5
         title = "Add Event"
         
         tableView.register(
@@ -80,8 +65,6 @@ class ScheduleFormTableViewController: UITableViewController {
             TitleWithBageTableViewCell.self,
             forCellReuseIdentifier: TitleWithBageTableViewCell.id
         )
-        
-        view.backgroundColor = .systemGray5
         
         tableView.keyboardDismissMode = .onDrag
         let tapGesture = UITapGestureRecognizer(
@@ -133,14 +116,18 @@ extension ScheduleFormTableViewController {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        sections[section].cellsInSection
+        sections[section].cellsTitles.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        sections[section].rawValue
     }
     
     override func tableView(
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cellsSectionTitles = sections[indexPath.section].cellsNames
+        let cellsSectionTitles = sections[indexPath.section].cellsTitles
         let cellTitle = cellsSectionTitles[indexPath.row]
         
         switch indexPath {
@@ -192,17 +179,6 @@ extension ScheduleFormTableViewController {
         default:
             return UITableViewCell()
         }
-    }
-    
-    override func tableView(
-        _ tableView: UITableView,
-        heightForRowAt indexPath: IndexPath
-    ) -> CGFloat {
-        ScheduleFormTableViewCell.height
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        sections[section].rawValue
     }
     
     override func tableView(
