@@ -65,10 +65,6 @@ class ScheduleFormTableViewController: UITableViewController {
         title = "Add Event"
         
         tableView.register(
-            HeaderForCell.self,
-            forHeaderFooterViewReuseIdentifier: HeaderForCell.headerID
-        )
-        tableView.register(
             ColorPickTableViewCell.self,
             forCellReuseIdentifier: ColorPickTableViewCell.id
         )
@@ -205,32 +201,8 @@ extension ScheduleFormTableViewController {
         ScheduleFormTableViewCell.height
     }
     
-    /*
-     Расстояние headers у tableView в iOS 15.0 отличается от всех предыдущих
-     поэтому выставляем примерно одинаковые отступы
-     */
-    // FIXME: Проверить, какие отступы на iOS 14
-    override func tableView(
-        _ tableView: UITableView,
-        heightForHeaderInSection section: Int
-    ) -> CGFloat {
-        if #available(iOS 14.0, *) {
-            return 25
-        } else {
-            return 45
-        }
-    }
-    
-    override func tableView(
-        _ tableView: UITableView,
-        viewForHeaderInSection section: Int
-    ) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(
-            withIdentifier: HeaderForCell.headerID
-        ) as! HeaderForCell
-        let headerTitle = sections[section].rawValue
-        header.configureHeader(with: headerTitle)
-        return header
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        sections[section].rawValue
     }
     
     override func tableView(
