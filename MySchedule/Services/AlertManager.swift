@@ -10,7 +10,7 @@ import UIKit
 class AlertManager {
     static let shared = AlertManager()
     
-    private let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+    private let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
     private let calendar = Calendar.current
     
     private init() {}
