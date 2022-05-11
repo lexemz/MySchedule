@@ -7,36 +7,20 @@
 
 import UIKit
 
-enum ColorPickerColors: CaseIterable {
-    case gray, red, green, blue, pink, orange, purple, indigo, yellow, teal
-
-    var rawValue: UIColor {
-        switch self {
-        case .gray:
-            return .systemGray
-        case .red:
-            return .systemRed
-        case .green:
-            return .systemGreen
-        case .blue:
-            return .systemBlue
-        case .pink:
-            return .systemPink
-        case .orange:
-            return .systemOrange
-        case .purple:
-            return .systemPurple
-        case .indigo:
-            return .systemIndigo
-        case .yellow:
-            return .systemYellow
-        case .teal:
-            return .systemTeal
-        }
-    }
-}
-
 class ColorPickerViewController: UIViewController {
+    let colors: [UIColor] = [
+        .systemGray,
+        .systemRed,
+        .systemGreen,
+        .systemBlue,
+        .systemPink,
+        .systemOrange,
+        .systemPurple,
+        .systemIndigo,
+        .systemYellow,
+        .systemTeal
+    ]
+    
     var delegate: ColorPickerDelegate!
     private var colorCollectionView: UICollectionView!
     
@@ -79,12 +63,12 @@ class ColorPickerViewController: UIViewController {
 
 extension ColorPickerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        ColorPickerColors.allCases.count
+        colors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = colorCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
-        let color = ColorPickerColors.allCases[indexPath.item].rawValue
+        let color = colors[indexPath.item]
         
         cell.backgroundColor = color
         
@@ -92,7 +76,7 @@ extension ColorPickerViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let color = ColorPickerColors.allCases[indexPath.item].rawValue
+        let color = colors[indexPath.item]
         delegate.colorPickerDidColorSelected(selectedColor: color)
         dismiss(animated: true)
     }
