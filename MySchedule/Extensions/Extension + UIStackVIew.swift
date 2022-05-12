@@ -7,21 +7,7 @@
 
 import UIKit
 
-extension UIStackView {
-    convenience init(
-        arrangedSubviews: [UIView],
-        asix: NSLayoutConstraint.Axis,
-        spacing: CGFloat,
-        distribution: UIStackView.Distribution
-    ) {
-        self.init(arrangedSubviews: arrangedSubviews)
-        self.axis = axis
-        self.spacing = spacing
-        self.distribution = distribution
-        
-        translatesAutoresizingMaskIntoConstraints = false
-    }
-    
+extension UIStackView {    
     static func vStack(_ views: [UIView]) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: views)
         stackView.spacing = 5

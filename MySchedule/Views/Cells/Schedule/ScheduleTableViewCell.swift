@@ -65,19 +65,21 @@ final class ScheduleTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private lazy var topStackView = UIStackView(
-        arrangedSubviews: [lessonName, teacherName],
-        asix: .horizontal,
-        spacing: 10,
-        distribution: .fillEqually
-    )
+    private lazy var topStackView: UIStackView = {
+        let stackView = UIStackView.hStack([lessonName, teacherName])
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
     
-    private lazy var bottomStackView = UIStackView(
-        arrangedSubviews: [lessonType, buildingInfo, audienceИumber],
-        asix: .horizontal,
-        spacing: 10,
-        distribution: .fillEqually
-    )
+    private lazy var bottomStackView: UIStackView = {
+        let stackView = UIStackView.hStack([lessonType, buildingInfo, audienceИumber])
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
     
     // MARK: - Cell LifeCycle
     

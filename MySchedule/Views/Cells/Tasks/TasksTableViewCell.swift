@@ -28,6 +28,13 @@ final class TasksTableViewCell: UITableViewCell {
         textAlignment: .left
     )
     
+    private lazy var taskStack: UIStackView = {
+        let stackView = UIStackView.vStack([taskName, taskDescription])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .fillProportionally
+        return stackView
+    }()
+    
     private lazy var isDoneButton: UIButton = {
         let btn = UIButton()
 
@@ -89,7 +96,7 @@ final class TasksTableViewCell: UITableViewCell {
 
 extension TasksTableViewCell {
     private func setupConstraints() {
-        contentView.addSubview(isDoneButton)
+        addSubview(isDoneButton)
         NSLayoutConstraint.activate([
             isDoneButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             isDoneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
@@ -97,18 +104,11 @@ extension TasksTableViewCell {
             isDoneButton.widthAnchor.constraint(equalToConstant: 40)
         ])
         
-        addSubview(taskName)
+        addSubview(taskStack)
         NSLayoutConstraint.activate([
-            taskName.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            taskName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            taskName.trailingAnchor.constraint(equalTo: isDoneButton.leadingAnchor, constant: -16)
-        ])
-        
-        addSubview(taskDescription)
-        NSLayoutConstraint.activate([
-            taskDescription.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            taskDescription.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            taskDescription.trailingAnchor.constraint(equalTo: isDoneButton.leadingAnchor, constant: -16)
+            taskStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            taskStack.trailingAnchor.constraint(equalTo: isDoneButton.leadingAnchor, constant: -16),
+            taskStack.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 }
