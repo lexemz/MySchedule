@@ -7,24 +7,58 @@
 
 import UIKit
 
-class ContactsViewController: UIViewController {
+class ContactsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .systemBackground
-        title = "Contacts"
+        setupScreen()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupScreen() {
+        view.backgroundColor = .systemBackground
+        title = "Contacts"
+        
+        tableView.register(
+            ContactsTableViewCell.self,
+            forCellReuseIdentifier: ContactsTableViewCell.id
+        )
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addButtonTapped)
+        )
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .edit,
+            target: self,
+            action: #selector(editButtonTapped)
+        )
     }
-    */
+    
+    @objc private func addButtonTapped() {
+        
+    }
+    
+    @objc private func editButtonTapped() {
+        
+    }
+}
 
+extension ContactsViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: ContactsTableViewCell.id
+        ) as! ContactsTableViewCell
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
+    }
 }

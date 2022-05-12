@@ -37,6 +37,7 @@
 		78C8C07A2812ABDB00A090E0 /* Extension + UIStackVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C0792812ABDB00A090E0 /* Extension + UIStackVIew.swift */; };
 		78C8C07C2812B14B00A090E0 /* Extension + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C07B2812B14B00A090E0 /* Extension + UILabel.swift */; };
 		78C8C07F2812E83200A090E0 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */; };
+		78D4D741282D48E9006ED5A1 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D4D740282D48E9006ED5A1 /* ContactsTableViewCell.swift */; };
 		78E7EE6F281200FF00DC108F /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */; };
 		78E7EE772812095D00DC108F /* Extension + FSCalendar .swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7EE762812095D00DC108F /* Extension + FSCalendar .swift */; };
 		AFC61CFE9F0A581190E4F1A9 /* Pods_MySchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73179EEDD92A301B46BECE83 /* Pods_MySchedule.framework */; };
@@ -99,6 +100,7 @@
 		78C8C0792812ABDB00A090E0 /* Extension + UIStackVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIStackVIew.swift"; sourceTree = "<group>"; };
 		78C8C07B2812B14B00A090E0 /* Extension + UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UILabel.swift"; sourceTree = "<group>"; };
 		78C8C07E2812E83200A090E0 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
+		78D4D740282D48E9006ED5A1 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		78E7EE6E281200FF00DC108F /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		78E7EE722812025E00DC108F /* FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E7EE762812095D00DC108F /* Extension + FSCalendar .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + FSCalendar .swift"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				788C45E5282C13C000CEDAB4 /* FormCells */,
 				78452D572818312300D258B9 /* Schedule */,
 				78452D582818312B00D258B9 /* Tasks */,
+				78D4D73F282D4882006ED5A1 /* Contacts */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -361,6 +364,14 @@
 				78452D5B281832E000D258B9 /* ColorPickerViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		78D4D73F282D4882006ED5A1 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				78D4D740282D48E9006ED5A1 /* ContactsTableViewCell.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 		78E7EE6D281200C600DC108F /* Controllers */ = {
@@ -630,6 +641,7 @@
 				7840D36F28216FBD00BFFFD2 /* SwitcherTableViewCell.swift in Sources */,
 				7840D36D282167D300BFFFD2 /* ColorPickTableViewCell.swift in Sources */,
 				7840D37B28218D9D00BFFFD2 /* SwitcherTableViewCellDelegate.swift in Sources */,
+				78D4D741282D48E9006ED5A1 /* ContactsTableViewCell.swift in Sources */,
 				78452D5C281832E000D258B9 /* ColorPickerViewController.swift in Sources */,
 				7840D3722821736B00BFFFD2 /* TextFieldTableViewCell.swift in Sources */,
 				78E7EE772812095D00DC108F /* Extension + FSCalendar .swift in Sources */,
