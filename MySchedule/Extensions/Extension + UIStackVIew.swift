@@ -21,4 +21,18 @@ extension UIStackView {
         
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    static func vStack(_ views: [UIView]) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: views)
+        stackView.spacing = 5
+        stackView.axis = .vertical
+        return stackView
+    }
+    
+    static func hStack(_ views: [UIView]) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: views)
+        stackView.spacing = 5
+        stackView.axis = .horizontal
+        return stackView
+    }
 }
