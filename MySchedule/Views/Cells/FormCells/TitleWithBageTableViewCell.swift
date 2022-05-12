@@ -72,16 +72,26 @@ class TitleWithBageTableViewCell: UITableViewCell {
 
 extension TitleWithBageTableViewCell {
     private func setupConstraints() {
-        addSubview(cellLabel)
+        contentView.addSubview(cellLabel)
         NSLayoutConstraint.activate([
-            cellLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            cellLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
+            cellLabel.centerYAnchor.constraint(
+                equalTo: contentView.centerYAnchor
+            ),
+            cellLabel.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: 16
+            )
         ])
         
-        addSubview(userDataLabel)
+        contentView.addSubview(userDataLabel)
         NSLayoutConstraint.activate([
-            userDataLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            userDataLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            userDataLabel.centerYAnchor.constraint(
+                equalTo: contentView.centerYAnchor
+            ),
+            userDataLabel.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -16
+            )
         ])
     }
 }

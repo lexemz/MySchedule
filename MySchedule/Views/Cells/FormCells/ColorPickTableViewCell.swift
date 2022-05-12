@@ -62,18 +62,31 @@ class ColorPickTableViewCell: UITableViewCell {
 
 extension ColorPickTableViewCell {
     private func setupConstraints() {
-        addSubview(cellLabel)
+        contentView.addSubview(cellLabel)
         NSLayoutConstraint.activate([
-            cellLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            cellLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            cellLabel.centerYAnchor.constraint(
+                equalTo: contentView.centerYAnchor
+            ),
+            cellLabel.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: 16
+            )
         ])
 
-        addSubview(colorWindow)
+        contentView.addSubview(colorWindow)
         NSLayoutConstraint.activate([
-            colorWindow.centerYAnchor.constraint(equalTo: centerYAnchor),
-            colorWindow.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            colorWindow.heightAnchor.constraint(equalToConstant: 25),
-            colorWindow.widthAnchor.constraint(equalToConstant: 25),
+            colorWindow.centerYAnchor.constraint(
+                equalTo: contentView.centerYAnchor),
+            colorWindow.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -16
+            ),
+            colorWindow.heightAnchor.constraint(
+                equalToConstant: 25
+            ),
+            colorWindow.widthAnchor.constraint(
+                equalToConstant: 25
+            )
         ])
     }
 }

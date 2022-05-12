@@ -75,16 +75,26 @@ class SwitcherTableViewCell: UITableViewCell {
 
 extension SwitcherTableViewCell {
     private func setupConstraints() {
-        addSubview(cellLabel)
+        contentView.addSubview(cellLabel)
         NSLayoutConstraint.activate([
-            cellLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            cellLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            cellLabel.centerYAnchor.constraint(
+                equalTo: contentView.centerYAnchor
+            ),
+            cellLabel.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: 16
+            ),
         ])
 
-        addSubview(switcher)
+        contentView.addSubview(switcher)
         NSLayoutConstraint.activate([
-            switcher.centerYAnchor.constraint(equalTo: centerYAnchor),
-            switcher.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            switcher.centerYAnchor.constraint(
+                equalTo: contentView.centerYAnchor
+            ),
+            switcher.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -16
+            ),
         ])
     }
 }

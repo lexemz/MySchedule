@@ -83,12 +83,22 @@ extension TextFieldTableViewCell: UITextFieldDelegate {
 
 extension TextFieldTableViewCell {
     private func setupConstraints() {
-        addSubview(textField)
+        contentView.addSubview(textField)
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: topAnchor),
-            textField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            textField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
+            textField.topAnchor.constraint(
+                equalTo: contentView.topAnchor
+            ),
+            textField.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor
+            ),
+            textField.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -16
+            ),
+            textField.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: 16
+            )
         ])
     }
 }
