@@ -46,6 +46,10 @@ class ContactsFormTableViewController: UITableViewController {
             TextFieldTableViewCell.self,
             forCellReuseIdentifier: TextFieldTableViewCell.id
         )
+        tableView.register(
+            ImageTableViewCell.self,
+            forCellReuseIdentifier: ImageTableViewCell.id
+        )
         
         tableView.keyboardDismissMode = .onDrag
         let tapGesture = UITapGestureRecognizer(
@@ -77,7 +81,10 @@ extension ContactsFormTableViewController {
         
         switch indexPath {
         case [0, 0]:
-            return UITableViewCell()
+            let imageCell = tableView.dequeueReusableCell(
+                withIdentifier: ImageTableViewCell.id
+            ) as! ImageTableViewCell
+            return imageCell
         case [1, 0]:
             let textfieldCell = tableView.dequeueReusableCell(
                 withIdentifier: TextFieldTableViewCell.id
@@ -94,6 +101,17 @@ extension ContactsFormTableViewController {
             return textfieldCell
         default:
             return UITableViewCell()
+        }
+    }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
+        if indexPath == [0,0] {
+            return 100
+        } else {
+            return UITableView.automaticDimension
         }
     }
 }
