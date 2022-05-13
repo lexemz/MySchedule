@@ -29,21 +29,13 @@ class ContactsViewController: UITableViewController {
             action: #selector(addButtonTapped)
         )
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .edit,
-            target: self,
-            action: #selector(editButtonTapped)
-        )
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     @objc private func addButtonTapped() {
-        let form = ContactsFormTableViewController()
+        let form = ContactsFormTableViewController(style: .insetGrouped)
         let nc = UINavigationController(rootViewController: form)
         present(nc, animated: true)
-    }
-    
-    @objc private func editButtonTapped() {
-        
     }
 }
 
