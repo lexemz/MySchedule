@@ -96,19 +96,36 @@ final class TasksTableViewCell: UITableViewCell {
 
 extension TasksTableViewCell {
     private func setupConstraints() {
-        addSubview(isDoneButton)
+        contentView.addSubview(isDoneButton)
         NSLayoutConstraint.activate([
-            isDoneButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            isDoneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            isDoneButton.heightAnchor.constraint(equalToConstant: 40),
-            isDoneButton.widthAnchor.constraint(equalToConstant: 40)
+            isDoneButton.centerYAnchor.constraint(
+                equalTo: contentView.centerYAnchor
+            ),
+            isDoneButton.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -20
+            ),
+            isDoneButton.heightAnchor.constraint(
+                equalToConstant: 40
+            ),
+            isDoneButton.widthAnchor.constraint(
+                equalToConstant: 40
+            )
         ])
         
-        addSubview(taskStack)
+        contentView.addSubview(taskStack)
         NSLayoutConstraint.activate([
-            taskStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            taskStack.trailingAnchor.constraint(equalTo: isDoneButton.leadingAnchor, constant: -16),
-            taskStack.centerYAnchor.constraint(equalTo: centerYAnchor)
+            taskStack.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: 16
+            ),
+            taskStack.trailingAnchor.constraint(
+                equalTo: isDoneButton.leadingAnchor,
+                constant: -16
+            ),
+            taskStack.centerYAnchor.constraint(
+                equalTo: contentView.centerYAnchor
+            )
         ])
     }
 }

@@ -83,26 +83,38 @@ final class ContactsTableViewCell: UITableViewCell {
 
 extension ContactsTableViewCell {
     func setupConstraints() {
-        addSubview(userImage)
-        addSubview(contactInfoStack)
-        
+        contentView.addSubview(userImage)
         NSLayoutConstraint.activate([
-            userImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            userImage.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            userImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            userImage.widthAnchor.constraint(equalTo: userImage.heightAnchor)
+            userImage.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: 16
+            ),
+            userImage.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: 5
+            ),
+            userImage.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor,
+                constant: -5
+            ),
+            userImage.widthAnchor.constraint(
+                equalTo: userImage.heightAnchor
+            )
         ])
         
+        contentView.addSubview(contactInfoStack)
         NSLayoutConstraint.activate([
             contactInfoStack.leadingAnchor.constraint(
                 equalTo: userImage.trailingAnchor,
                 constant: 16
             ),
             contactInfoStack.trailingAnchor.constraint(
-                equalTo: trailingAnchor,
+                equalTo: contentView.trailingAnchor,
                 constant: -16
             ),
-            contactInfoStack.centerYAnchor.constraint(equalTo: centerYAnchor)
+            contactInfoStack.centerYAnchor.constraint(
+                equalTo: contentView.centerYAnchor
+            )
         ])
     }
 }
