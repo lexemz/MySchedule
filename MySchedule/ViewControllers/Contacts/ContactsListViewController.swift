@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactsViewController: UITableViewController {
+class ContactsListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class ContactsViewController: UITableViewController {
     }
 }
 
-extension ContactsViewController {
+extension ContactsListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }

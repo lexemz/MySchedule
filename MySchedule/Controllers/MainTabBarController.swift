@@ -16,19 +16,19 @@ class MainTabBarController: UITabBarController {
     
     func setupTabBar() {
         let scheduleVC = makeNavigationController(
-            viewController: ScheduleViewController(),
+            viewController: ScheduleListViewController(),
             itemName: "Schedule",
             itemImage: "calendar",
             selectedItemImage: "calendar"
         )
         let tasksVC = makeNavigationController(
-            viewController: TasksViewController(),
+            viewController: TasksListViewController(),
             itemName: "Tasks",
             itemImage: "doc.text",
             selectedItemImage: "doc.text.fill"
         )
         let contactsVC = makeNavigationController(
-            viewController: ContactsViewController(),
+            viewController: ContactsListViewController(),
             itemName: "Contacts",
             itemImage: "person.3",
             selectedItemImage: "person.3.fill"

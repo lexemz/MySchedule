@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ScheduleListViewController.swift
 //  MySchedule
 //
 //  Created by Igor on 19.04.2022.
@@ -8,7 +8,7 @@
 import FSCalendar
 import UIKit
 
-final class ScheduleViewController: UIViewController {
+final class ScheduleListViewController: UIViewController {
     // MARK: - Constraints
 
     private var calendarHeightConstraint: NSLayoutConstraint!
@@ -123,7 +123,7 @@ final class ScheduleViewController: UIViewController {
 
 // MARK: - TableViewDelegate and TableViewDataSource
 
-extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
+extension ScheduleListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
@@ -159,7 +159,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - FSCalendarDelegate and FSCalendarDataSource
 
-extension ScheduleViewController: FSCalendarDelegate, FSCalendarDataSource {
+extension ScheduleListViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(
         _ calendar: FSCalendar,
         boundingRectWillChange bounds: CGRect,
@@ -180,7 +180,7 @@ extension ScheduleViewController: FSCalendarDelegate, FSCalendarDataSource {
 
 // MARK: - SetConstraints
 
-extension ScheduleViewController {
+extension ScheduleListViewController {
     func setConstaints() {
         let safeArea = view.safeAreaLayoutGuide
         

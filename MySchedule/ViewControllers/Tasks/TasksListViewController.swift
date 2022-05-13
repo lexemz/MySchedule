@@ -1,5 +1,5 @@
 //
-//  TasksViewController.swift
+//  TasksListViewController.swift
 //  MySchedule
 //
 //  Created by Igor on 19.04.2022.
@@ -12,7 +12,7 @@ protocol TasksTableViewCellDelegate {
     func buttonIsPressed(indexPath: IndexPath)
 }
 
-final class TasksViewController: UIViewController {
+final class TasksListViewController: UIViewController {
     // MARK: - Constratins
 
     private var calendarHeightConstraint: NSLayoutConstraint!
@@ -131,7 +131,7 @@ final class TasksViewController: UIViewController {
 
 // MARK: - TableViewDelegate and TableViewDataSource
 
-extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
+extension TasksListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
@@ -164,7 +164,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - FSCalendarDelegate and FSCalendarDataSource
 
-extension TasksViewController: FSCalendarDelegate, FSCalendarDataSource {
+extension TasksListViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(
         _ calendar: FSCalendar,
         boundingRectWillChange bounds: CGRect,
@@ -181,7 +181,7 @@ extension TasksViewController: FSCalendarDelegate, FSCalendarDataSource {
 
 // MARK: - TasksTableViewCellDelegate
 
-extension TasksViewController: TasksTableViewCellDelegate {
+extension TasksListViewController: TasksTableViewCellDelegate {
     func buttonIsPressed(indexPath: IndexPath) {
         Logger.debug("tap cell in \(indexPath.row) row")
     }
@@ -189,7 +189,7 @@ extension TasksViewController: TasksTableViewCellDelegate {
 
 // MARK: - SetConstraints
 
-extension TasksViewController {
+extension TasksListViewController {
     func setConstaints() {
         let safeArea = view.safeAreaLayoutGuide
         

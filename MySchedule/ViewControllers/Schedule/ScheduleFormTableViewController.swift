@@ -99,7 +99,7 @@ class ScheduleFormTableViewController: UITableViewController {
     }
     
     private func presentTeachersVC() {
-        let teachersVC = ContactsViewController()
+        let teachersVC = ContactsListViewController()
         let teachersNC = UINavigationController(rootViewController: teachersVC)
         present(teachersNC, animated: true)
     }
