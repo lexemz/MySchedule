@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		40D184956CC70867919735AE /* Pods_MySchedule_MyScheduleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A56B79AAD3EC5044CAF8D5C /* Pods_MySchedule_MyScheduleUITests.framework */; };
 		780C73B428180CEC003B363A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780C73B328180CEC003B363A /* AlertManager.swift */; };
+		78104D6F282E78F0006E88F2 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78104D6E282E78F0006E88F2 /* ImageTableViewCell.swift */; };
 		782187DE2816ACB6008810ED /* ScheduleFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782187DD2816ACB6008810ED /* ScheduleFormTableViewController.swift */; };
 		782187E02816B252008810ED /* ScheduleFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782187DF2816B252008810ED /* ScheduleFormTableViewCell.swift */; };
 		7840D36A28213E5000BFFFD2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840D36928213E4F00BFFFD2 /* Logger.swift */; };
@@ -67,6 +68,7 @@
 		73179EEDD92A301B46BECE83 /* Pods_MySchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76DEEC04E5A16025CB0E9BFA /* Pods-MyScheduleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyScheduleTests.release.xcconfig"; path = "Target Support Files/Pods-MyScheduleTests/Pods-MyScheduleTests.release.xcconfig"; sourceTree = "<group>"; };
 		780C73B328180CEC003B363A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		78104D6E282E78F0006E88F2 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		782187DD2816ACB6008810ED /* ScheduleFormTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFormTableViewController.swift; sourceTree = "<group>"; };
 		782187DF2816B252008810ED /* ScheduleFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleFormTableViewCell.swift; sourceTree = "<group>"; };
 		7840D36928213E4F00BFFFD2 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				7840D36E28216FBD00BFFFD2 /* SwitcherTableViewCell.swift */,
 				7840D3712821736B00BFFFD2 /* TextFieldTableViewCell.swift */,
 				7840D373282177ED00BFFFD2 /* TitleWithBageTableViewCell.swift */,
+				78104D6E282E78F0006E88F2 /* ImageTableViewCell.swift */,
 			);
 			path = FormCells;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				789A91CA280F2F10006F6B61 /* MainTabBarController.swift in Sources */,
 				78C8C07A2812ABDB00A090E0 /* Extension + UIStackVIew.swift in Sources */,
 				7840D36A28213E5000BFFFD2 /* Logger.swift in Sources */,
+				78104D6F282E78F0006E88F2 /* ImageTableViewCell.swift in Sources */,
 				788C45E4282BFFA500CEDAB4 /* TasksFormTableViewController.swift in Sources */,
 				789A9198280F2DA4006F6B61 /* SceneDelegate.swift in Sources */,
 				789A91CE280F3080006F6B61 /* ContactsViewController.swift in Sources */,
