@@ -1,5 +1,5 @@
 //
-//  TeachersViewController.swift
+//  ContactsFormTableViewController.swift
 //  MySchedule
 //
 //  Created by Igor on 26.04.2022.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class TeachersViewController: UIViewController {
+class ContactsFormTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray5
         title = "Teachers"
     }
     

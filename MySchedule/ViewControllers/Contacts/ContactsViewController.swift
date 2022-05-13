@@ -37,7 +37,9 @@ class ContactsViewController: UITableViewController {
     }
     
     @objc private func addButtonTapped() {
-        
+        let form = ContactsFormTableViewController()
+        let nc = UINavigationController(rootViewController: form)
+        present(nc, animated: true)
     }
     
     @objc private func editButtonTapped() {
