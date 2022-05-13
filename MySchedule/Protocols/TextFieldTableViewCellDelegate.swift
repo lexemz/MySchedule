@@ -9,8 +9,5 @@ import UIKit
 
 protocol TextFieldTableViewCellDelegate: AnyObject {
     func textFieldDidEndEditing(value: String?, at indexPath: IndexPath)
-    func textFieldShouldReturn(
-        indexPath: IndexPath,
-        probableNextIndexPath: IndexPath
-    )
+    func textFieldShouldReturn(indexPath: IndexPath)
 }

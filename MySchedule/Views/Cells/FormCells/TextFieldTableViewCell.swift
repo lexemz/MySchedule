@@ -67,14 +67,7 @@ extension TextFieldTableViewCell: UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let probableNextIndexPath = IndexPath(
-            row: indexPath.row + 1,
-            section: indexPath.section
-        )
-        delegate?.textFieldShouldReturn(
-            indexPath: indexPath,
-            probableNextIndexPath: probableNextIndexPath
-        )
+        delegate?.textFieldShouldReturn(indexPath: indexPath)
         return true
     }
 }

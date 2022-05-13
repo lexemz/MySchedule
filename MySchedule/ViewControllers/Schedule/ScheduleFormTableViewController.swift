@@ -239,7 +239,12 @@ extension ScheduleFormTableViewController: TextFieldTableViewCellDelegate {
         Logger.debug(value)
     }
     
-    func textFieldShouldReturn(indexPath: IndexPath, probableNextIndexPath: IndexPath) {
+    func textFieldShouldReturn(indexPath: IndexPath) {
+        let probableNextIndexPath = IndexPath(
+            row: indexPath.row + 1,
+            section: indexPath.section
+        )
+        
         let currentCell = tableView.cellForRow(at: indexPath) as? TextFieldTableViewCell
         let nextCell = tableView.cellForRow(at: probableNextIndexPath) as? TextFieldTableViewCell
         
